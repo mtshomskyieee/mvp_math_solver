@@ -1,3 +1,4 @@
+
 import os
 import streamlit as st
 from config.settings import OPENAI_API_KEY
@@ -11,13 +12,11 @@ logger = setup_logger("main")
 override_key = "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"
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY', override_key)
 
-
 if __name__ == "__main__":
     try:
         # Configure Streamlit server settings
-        st.set_option('server.address', '0.0.0.0')
-        st.set_option('server.port', 3000)
-        # Run the Streamlit app
+        st.set_page_config(page_title="Math Problem Solver")
+        # Run the Streamlit app with proper server configuration
         app()
     except Exception as e:
         logger.error(f"Application error: {str(e)}", exc_info=True)

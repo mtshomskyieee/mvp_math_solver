@@ -8,7 +8,7 @@ deploymentTarget = "autoscale"
 run = ["sh", "-c", "streamlit run main.py"]
 
 [workflows]
-runButton = "Streamlit Server"
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "Project"
@@ -22,7 +22,6 @@ args = "Streamlit Server"
 [[workflows.workflow]]
 name = "Streamlit Server"
 author = "agent"
-mode = "parallel"
 
 [workflows.workflow.metadata]
 agentRequireRestartOnSave = false
@@ -33,16 +32,18 @@ task = "packager.installForAll"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "streamlit run main.py"
-waitForPort = 5000
+waitForPort = 8501
 
 [[ports]]
-localPort = 5000
+localPort = 8501
 externalPort = 80
+
+[[ports]]
+localPort = 8501
+externalPort = 443
 
 [[ports]]
 localPort = 8501
 externalPort = 3000
 
-[[ports]]
-localPort = 8502
-externalPort = 3001
+

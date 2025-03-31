@@ -3,7 +3,7 @@
 import os
 
 # API keys
-override_key = ''
+override_key = "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"
 OPENAI_API_KEY = os.getenv(
     'OPENAI_API_KEY',
     override_key

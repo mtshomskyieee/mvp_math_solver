@@ -72,8 +72,12 @@ This application uses a modular architecture with:
 ## running
 
 1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Set your OpenAI_API_key or edit main.py 's override_key with your key  
+2. Setup a virtual environment `python3 -m venv venv` then `source venv/bin/activate`
+   1. remember to run `source venv/bin/activate` every time you open a shell to this project to run
+   2. ☝️ Yes, you must activate your environment to grab locally installed libs
+3. Install dependencies: `pip install -r requirements.txt`
+4. Set your OPENAI_API_KEY or edit main.py 's override_key with your key  
+   4. ☝️☝Add your key
 5. `python main.py`
 
 # Diagrams

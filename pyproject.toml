@@ -7,10 +7,10 @@ build-backend = "setuptools.build_meta"
 name = "math-solver"
 version = "0.1.0"
 description = "A Streamlit application that uses multiple AI agents to solve and verify math problems"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 langchain = ">=0.0.267"
 langchain-openai = ">=0.0.2"
 langchain-core = ">=0.0.10"

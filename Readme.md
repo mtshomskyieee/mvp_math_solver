@@ -78,7 +78,7 @@ This application uses a modular architecture with:
 3. Install dependencies: `pip install -r requirements.txt`
 4. Set your OPENAI_API_KEY or edit main.py 's override_key with your key  
    4. ☝️☝Add your key
-5. `python main.py`
+5. `streamlit run main.py`
 
 # Diagrams
 

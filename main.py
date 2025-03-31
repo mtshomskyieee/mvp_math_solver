@@ -14,6 +14,9 @@ os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY', override_key)
 
 if __name__ == "__main__":
     try:
+        # Configure Streamlit server settings
+        st.set_option('server.address', '0.0.0.0')
+        st.set_option('server.port', 3000)
         # Run the Streamlit app
         app()
     except Exception as e:

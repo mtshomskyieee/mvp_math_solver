@@ -1,0 +1,53 @@
+# test_cases.json
+[
+  {
+    "problem": "What is 125 plus 37?",
+    "expected_result": 162,
+    "category": "basic_arithmetic"
+  },
+  {
+    "problem": "What is 245 minus 89?",
+    "expected_result": 156,
+    "category": "basic_arithmetic"
+  },
+  {
+    "problem": "Multiply 18 by 7",
+    "expected_result": 126,
+    "category": "basic_arithmetic"
+  },
+  {
+    "problem": "Divide 120 by 8",
+    "expected_result": 15,
+    "category": "basic_arithmetic"
+  },
+  {
+    "problem": "If I have 5 boxes with 12 items each, and I use 23 items, how many do I have left?",
+    "expected_result": 37,
+    "category": "multi_step"
+  },
+  {
+    "problem": "Find the average of 15, 23, 29, 31, and 42",
+    "expected_result": 28,
+    "category": "multi_step"
+  },
+  {
+    "problem": "What is 15% of 240?",
+    "expected_result": 36,
+    "category": "multi_step"
+  },
+  {
+    "problem": "If a triangle has sides of length 3, 4, and 5, what is its area?",
+    "expected_result": 6,
+    "category": "complex"
+  },
+  {
+    "problem": "Find the square root of 144 and then add 5",
+    "expected_result": 17,
+    "category": "complex"
+  },
+  {
+    "problem": "What is 2 raised to the power of 8?",
+    "expected_result": 256,
+    "category": "complex"
+  }
+]

@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  math_solver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: math_solver
+    stdin_open: true  # Keep STDIN open
+    tty: true         # Allocate a pseudo-TTY
+    volumes:
+      - ./:/usr/src/app/data  # Optional: Mount current directory to save any output data

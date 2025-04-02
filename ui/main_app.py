@@ -12,6 +12,11 @@ from workflows.math_workflow import math_workflow
 from ui.sidebar import render_sidebar
 from ui.problem_solver import problem_input_section, solve_problem_section, display_solution_results
 
+import atexit
+from workflows.math_workflow import save_workflow_cache
+
+# Register the save_workflow_cache function to run on exit
+atexit.register(save_workflow_cache)
 
 def initialize_session_state():
     """Initialize session state variables."""
@@ -44,6 +49,11 @@ def initialize_session_state():
     if "evaluation_results" not in st.session_state:
         st.session_state.evaluation_results = None
 
+def get_virtual_tool_manager():
+    """Get the virtual tool manager from session state."""
+    if "virtual_tool_manager" in st.session_state:
+        return st.session_state.virtual_tool_manager
+    return None
 
 def run_evaluation_section(solver_agent, verification_agent):
     """Render the evaluation section."""

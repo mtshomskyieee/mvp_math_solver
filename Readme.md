@@ -69,7 +69,7 @@ This application uses a modular architecture with:
 - Virtual tool creation from successful problem-solving sequences
 - Integrated validation and retry workflow
 
-## running
+## Running
 
 1. Clone the repository
 2. Setup a virtual environment `python3 -m venv venv` then `source venv/bin/activate`
@@ -78,7 +78,7 @@ This application uses a modular architecture with:
 3. Install dependencies: `pip install -r requirements.txt`
 4. Set your OPENAI_API_KEY or edit main.py 's override_key with your key  
    4. ☝️☝Add your key
-5. `streamlit run main.py`
+5. Run `streamlit run main.py`
 
 # Diagrams
 

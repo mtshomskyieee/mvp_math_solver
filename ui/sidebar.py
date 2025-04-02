@@ -4,6 +4,8 @@ from core.math_toolbox import MathToolbox
 from core.virtual_tool_manager import VirtualToolManager
 
 
+# Modify math_solver/ui/sidebar.py
+
 def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManager):
     """Render the sidebar components."""
     # # Sidebar info
@@ -81,6 +83,25 @@ def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManage
 
     # Virtual tools in sidebar
     st.sidebar.header("Virtual Tools")
+
+    # Add button to import virtual tools from CSV
+    tool_import_col1, tool_import_col2 = st.sidebar.columns(2)
+
+    with tool_import_col1:
+        if st.button("Import Tools from CSV"):
+            tools_imported = virtual_tool_manager.import_virtual_tools_from_csv()
+            if tools_imported > 0:
+                st.success(f"Successfully imported {tools_imported} tools!")
+                st.rerun()  # Refresh the UI to show new tools
+            else:
+                st.warning("No new tools were imported.")
+
+    with tool_import_col2:
+        if st.button("Save Tools to CSV"):
+            virtual_tool_manager.save_virtual_tools_to_csv()
+            st.success(f"Saved {len(virtual_tool_manager.virtual_tools)} virtual tools to new_tools.csv")
+
+    # Show virtual tools
     virtual_tools = virtual_tool_manager.virtual_tools
 
     if not virtual_tools:

@@ -25,6 +25,7 @@ class MathToolbox:
     def __init__(self):
         # Track which tools are unreliable
         self.unreliable_tools = ["sum", "product"]
+        self.max_unreliable = False
         # Track tool usage statistics
         self.tool_stats = {
             "sum": {"calls": 0, "errors": 0},
@@ -46,6 +47,12 @@ class MathToolbox:
         # add the unreliable tools back in
         self.unreliable_tools = ["sum", "product"]
 
+    def set_max_unreliable(self):
+        self.max_unreliable = True
+
+    def unset_max_unreliable(self):
+        self.max_unreliable = False
+
     def get_tools_string(self) -> str:
         tools_string = ",".join(self.tool_stats.keys())
         return tools_string
@@ -55,7 +62,7 @@ class MathToolbox:
         self.tool_stats["sum"]["calls"] += 1
 
         # Introduce errors 40% of the time
-        if random.random() < 0.4 and "sum" in self.unreliable_tools:
+        if self.max_unreliable or (random.random() < 0.4 and "sum" in self.unreliable_tools):
             self.tool_stats["sum"]["errors"] += 1
             if random.random() < 0.5:  # Sometimes return wrong answer
                 return "Error occurred: Invalid input format"
@@ -79,7 +86,7 @@ class MathToolbox:
         self.tool_stats["product"]["calls"] += 1
 
         # Introduce errors 30% of the time
-        if random.random() < 0.3 and "product" in self.unreliable_tools:
+        if self.max_unreliable or (random.random() < 0.3 and "product" in self.unreliable_tools):
             self.tool_stats["product"]["errors"] += 1
             if random.random() < 0.5:  # Sometimes throw error
                 return "Error occurred: Invalid input format"

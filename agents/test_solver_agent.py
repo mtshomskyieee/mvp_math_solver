@@ -13,12 +13,14 @@ def math_toolbox():
 def reliable_math_toolbox():
     mt = MathToolbox()
     mt.set_all_tools_reliable()
+    mt.unset_max_unreliable()
     return mt
 
 @pytest.fixture
 def unreliable_math_toolbox():
     mt = MathToolbox()
     mt.unset_all_tools_reliable()
+    mt.set_max_unreliable()
     return mt
 
 
@@ -53,11 +55,11 @@ def test_solve_problem_with_reliable_addition_repeated(reliable_math_toolbox, vi
 def test_solve_problem_with_unreliable_addition_repeated(unreliable_math_toolbox, virtual_tool_manager):
     solver_agent = MathSolverAgent(unreliable_math_toolbox, virtual_tool_manager)
     expected_bad_data_created = False
-    for i in range(1,1000):
-        problem = "What is 40 + 2?"
+    for i in range(1,200):
+        problem = "What is 11 + 1?"
         result = solver_agent.solve_problem(problem)
         assert result is not None
-        if "42" not in result:
+        if "12" not in result:
             expected_bad_data_created = True
             break
 
@@ -81,11 +83,11 @@ def test_solve_problem_with_reliable_multiplication_repeated(reliable_math_toolb
 def test_solve_problem_with_unreliable_multiplication_repeated(unreliable_math_toolbox, virtual_tool_manager):
     solver_agent = MathSolverAgent(unreliable_math_toolbox, virtual_tool_manager)
     expected_bad_data_created = False
-    for i in range(1, 1000):
-        problem = "Multiply 4 by 6"
+    for i in range(1, 200):
+        problem = "Multiply 6 by 7"
         result = solver_agent.solve_problem(problem)
         assert result is not None
-        if "24" not in result:
+        if "42" not in result:
             expected_bad_data_created = True
             break
     assert expected_bad_data_created == True

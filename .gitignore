@@ -12,3 +12,5 @@ all.py
 
 *.pyc
 __pycache__
+
+setenv.sh

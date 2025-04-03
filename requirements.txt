@@ -24,3 +24,6 @@ faiss-cpu>=1.7.4
 tiktoken>=0.5.1
 pydantic>=2.3.0
 numexpr
+smolagents
+maturin
+pytest

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# For development reasons, let's squash everything together
-
 # Define the directories to traverse
 directories=("config" "core" "agents" "utils" "workflows")
 

@@ -3,8 +3,20 @@ import random
 import numpy as np
 from typing import Dict, List, Any
 from utils.logging_utils import setup_logger
+import importlib.util
+import sys
+import os
 
 logger = setup_logger("math_toolbox")
+
+# Try to import the Rust extension module
+try:
+    from rust_math_extensions import calculate_average
+    RUST_AVAILABLE = True
+    logger.info("Rust math extensions loaded successfully")
+except ImportError:
+    RUST_AVAILABLE = False
+    logger.warning("Rust math extensions not available, using Python fallback")
 
 
 class MathToolbox:
@@ -13,6 +25,7 @@ class MathToolbox:
     def __init__(self):
         # Track which tools are unreliable
         self.unreliable_tools = ["sum", "product"]
+        self.max_unreliable = False
         # Track tool usage statistics
         self.tool_stats = {
             "sum": {"calls": 0, "errors": 0},
@@ -23,6 +36,7 @@ class MathToolbox:
             "sqrt": {"calls": 0, "errors": 0},
             "modulo": {"calls": 0, "errors": 0},
             "round_number": {"calls": 0, "errors": 0},
+            "avg": {"calls": 0, "errors": 0},
         }
 
     def set_all_tools_reliable(self):
@@ -33,6 +47,12 @@ class MathToolbox:
         # add the unreliable tools back in
         self.unreliable_tools = ["sum", "product"]
 
+    def set_max_unreliable(self):
+        self.max_unreliable = True
+
+    def unset_max_unreliable(self):
+        self.max_unreliable = False
+
     def get_tools_string(self) -> str:
         tools_string = ",".join(self.tool_stats.keys())
         return tools_string
@@ -42,7 +62,7 @@ class MathToolbox:
         self.tool_stats["sum"]["calls"] += 1
 
         # Introduce errors 40% of the time
-        if random.random() < 0.4 and "sum" in self.unreliable_tools:
+        if self.max_unreliable or (random.random() < 0.4 and "sum" in self.unreliable_tools):
             self.tool_stats["sum"]["errors"] += 1
             if random.random() < 0.5:  # Sometimes return wrong answer
                 return "Error occurred: Invalid input format"
@@ -66,7 +86,7 @@ class MathToolbox:
         self.tool_stats["product"]["calls"] += 1
 
         # Introduce errors 30% of the time
-        if random.random() < 0.3 and "product" in self.unreliable_tools:
+        if self.max_unreliable or (random.random() < 0.3 and "product" in self.unreliable_tools):
             self.tool_stats["product"]["errors"] += 1
             if random.random() < 0.5:  # Sometimes throw error
                 return "Error occurred: Invalid input format"
@@ -185,6 +205,36 @@ class MathToolbox:
             return str(round(number, decimal_places))
         except Exception as e:
             self.tool_stats["round_number"]["errors"] += 1
+            return f"Error occurred: {str(e)}"
+
+    def avg(self, numbers_str: str) -> str:
+        """Calculate the average of a list of numbers using Rust. Format: 'num1, num2, num3, ...'"""
+        self.tool_stats["avg"]["calls"] += 1
+
+        try:
+            # Check if Rust is available and explicitly use it
+            if RUST_AVAILABLE:
+                # Call the Rust function directly
+                try:
+                    result = calculate_average(numbers_str)
+                    logger.info("Using Rust implementation for avg function")
+                    return str(result)
+                except Exception as e:
+                    # If Rust function fails, log the error and fall back to Python
+                    logger.error(f"Rust avg function failed: {str(e)}")
+                    self.tool_stats["avg"]["errors"] += 1
+                    # Fall through to Python implementation
+            else:
+                logger.info("Rust not available, using Python implementation for avg")
+
+            # Python fallback implementation
+            numbers = [float(x.strip()) for x in numbers_str.split(',')]
+            if not numbers:
+                raise ValueError("Empty list of numbers")
+            return str(sum(numbers) / len(numbers))
+
+        except Exception as e:
+            self.tool_stats["avg"]["errors"] += 1
             return f"Error occurred: {str(e)}"
 
     def get_stats(self) -> Dict[str, Dict[str, int]]:

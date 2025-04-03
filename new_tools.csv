@@ -1,0 +1,442 @@
+problem_text,output,virtual_tool_as_string
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:11.419839
+    # Sequence: modulo('5, 2')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:19.451931
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:58:19.452005
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:26.892614
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:58:26.892781
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:58:26.892852
+    # Sequence: sqrt('-1')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:32.107968
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:58:32.108155
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:58:32.108212
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:58:32.108258
+    # Sequence: sum('25, 37')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:02.583781
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:02.584016
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:02.584117
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:02.584206
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:02.584286
+    # Sequence: product('13, 7')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:11.694291
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:11.694451
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:11.694503
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:11.694550
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:11.694593
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:11.694636
+    # Sequence: divide('144, 12')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:18.285885
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:18.286048
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:18.286100
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:18.286145
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:18.286186
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:18.286227
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:18.286311
+    # Sequence: sqrt('81')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:26.320126
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:26.320289
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:26.320346
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:26.320399
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:26.320440
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:26.320483
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:26.320526
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T16:59:26.320569
+    # Sequence: power('5, 3')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:43.501737
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:43.501840
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:43.501870
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:43.501893
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:43.501915
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:43.501937
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:43.501959
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T16:59:43.501981
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-02T16:59:43.502016
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:56.539618
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:56.539636
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:56.539644
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:56.539651
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:56.539657
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:56.539663
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:56.539669
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T16:59:56.539676
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-02T16:59:56.539683
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T17:00:13.545930
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T17:00:13.546109
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T17:00:13.546163
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T17:00:13.546211
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T17:00:13.546294
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T17:00:13.546338
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T17:00:13.546383
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T17:00:13.546427
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-02T17:00:13.546474
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "

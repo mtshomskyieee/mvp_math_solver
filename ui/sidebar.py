@@ -6,13 +6,14 @@ from core.virtual_tool_manager import VirtualToolManager
 
 def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManager):
     """Render the sidebar components."""
-    # # Sidebar info
-    # st.sidebar.header("Agents")
-    # st.sidebar.markdown("""
-    # 1. Math Solver Agent - Uses tools to solve problems
-    # 2. Verification Agent - Verifies solutions
-    # 3. Virtual Tool Manager - Creates new tools from successful sequences
-    # """)
+    # Sidebar info
+    #st.sidebar.header("Agents")
+    #st.sidebar.markdown("""
+    #1. Math Solver Agent - Uses tools to solve problems
+    #2. Verification Agent - Verifies solutions
+    #3. CAS Agent - Uses Computer Algebra System (SymPy)
+    #4. Virtual Tool Manager - Creates new tools from successful sequences
+    #""")
 
     # Add toggle for tool errors
     st.sidebar.header("Settings")
@@ -81,6 +82,25 @@ def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManage
 
     # Virtual tools in sidebar
     st.sidebar.header("Virtual Tools")
+
+    # Add button to import virtual tools from CSV
+    tool_import_col1, tool_import_col2 = st.sidebar.columns(2)
+
+    with tool_import_col1:
+        if st.button("Import Tools from CSV"):
+            tools_imported = virtual_tool_manager.import_virtual_tools_from_csv()
+            if tools_imported > 0:
+                st.success(f"Successfully imported {tools_imported} tools!")
+                st.rerun()  # Refresh the UI to show new tools
+            else:
+                st.warning("No new tools were imported.")
+
+    with tool_import_col2:
+        if st.button("Save Tools to CSV"):
+            virtual_tool_manager.save_virtual_tools_to_csv()
+            st.success(f"Saved {len(virtual_tool_manager.virtual_tools)} virtual tools to new_tools.csv")
+
+    # Show virtual tools
     virtual_tools = virtual_tool_manager.virtual_tools
 
     if not virtual_tools:
@@ -98,3 +118,18 @@ def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManage
             if 'tool_sequence' in tool:
                 sequence_str = " → ".join([step['tool'] for step in tool['tool_sequence']])
                 st.sidebar.markdown(f"*Sequence: {sequence_str}*")
+
+    # Vector Store Information
+    st.sidebar.header("Vector Store")
+
+    # Show vector store statistics
+    vector_store_size = len(virtual_tool_manager.vector_store.problem_map)
+    st.sidebar.write(f"Problems in vector store: {vector_store_size}")
+
+    # Add button to migrate existing tools to vector store
+    if st.sidebar.button("Migrate Tools to Vector Store"):
+        migrated = virtual_tool_manager.migrate_existing_tools_to_vector_store()
+        if migrated > 0:
+            st.sidebar.success(f"Migrated {migrated} tools to vector store!")
+        else:
+            st.sidebar.info("No new tools to migrate.")

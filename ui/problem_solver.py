@@ -52,7 +52,7 @@ def problem_input_section():
     return problem
 
 
-def solve_problem_section(problem, solver_agent, verification_agent):
+def solve_problem_section(problem, solver_agent, verification_agent, cas_agent):  # Add cas_agent
     """Render the problem solving section."""
     # Check if we're in the middle of waiting for user input
     waiting_for_input = any(key.startswith("user_input_") and key.endswith("_timeout_counter")
@@ -93,11 +93,12 @@ def solve_problem_section(problem, solver_agent, verification_agent):
                     st.write("Starting solution workflow with validation and retries...")
 
                     try:
-                        # Run the math workflow
+                        # Run the math workflow with the CAS agent
                         result = math_workflow(
                             problem=problem,
                             solver_agent=solver_agent,
                             verification_agent=verification_agent,
+                            cas_agent=cas_agent,  # Add CAS agent
                             vtm=st.session_state.virtual_tool_manager,
                             callback_handler=callback_handler
                         )
@@ -132,11 +133,12 @@ def solve_problem_section(problem, solver_agent, verification_agent):
             st.markdown("### Solution Process (Continuing)")
 
             try:
-                # Continue the math workflow
+                # Continue the math workflow with the CAS agent
                 result = math_workflow(
                     problem=problem,
                     solver_agent=solver_agent,
                     verification_agent=verification_agent,
+                    cas_agent=cas_agent,  # Add CAS agent
                     vtm=st.session_state.virtual_tool_manager,
                     callback_handler=callback_handler
                 )
@@ -159,6 +161,34 @@ def solve_problem_section(problem, solver_agent, verification_agent):
                 st.rerun()
 
 
+# math_solver/ui/problem_solver.py - modify the display_agent_comparison function
+
+def display_agent_comparison(result):
+    """Display a comparison of all agent solutions."""
+    if 'agent_solutions' in result and any(result['agent_solutions'].values()):
+        st.markdown("### 🤖 Agent Solutions Comparison")
+
+        # Create a comparison table
+        agent_data = []
+        for agent, solution in result['agent_solutions'].items():
+            if solution:
+                # Get verification information
+                verification = "N/A"
+                if agent == "solver" and result.get("verification_result"):
+                    verification = result["verification_result"]
+
+                agent_data.append({
+                    "Agent": agent.capitalize(),
+                    "Solution": solution,
+                    "Verification": verification,
+                })
+
+        if agent_data:
+            # Convert to DataFrame for better display
+            import pandas as pd
+            df = pd.DataFrame(agent_data)
+            st.table(df)
+
 def display_solution_results():
     """Display solution results if available."""
     if st.session_state.get("workflow_result"):
@@ -177,11 +207,21 @@ def display_solution_results():
 
             st.write(result["verification_result"])
 
+            # Display agent solutions if available
+            if 'agent_solutions' in result:
+                st.markdown("### Agent Solutions")
+                for agent, solution in result['agent_solutions'].items():
+                    if solution:
+                        st.markdown(f"**{agent.capitalize()}**: {solution}")
+
             if result.get("used_virtual_tool", False):
                 st.info(f"This problem was solved using a virtual tool!")
 
             if result["attempts"] > 1:
                 st.info(f"The math solver needed {result['attempts']} attempts to reach a verified solution.")
+
+        # Display what each agent had
+        display_agent_comparison(result)
 
         # Reset the session state
         if st.button("Solve Another Problem"):

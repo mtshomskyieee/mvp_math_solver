@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  math-solver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      # Vector Database, tools, and cache in sync
+      - ./math_problems_vector_store.faiss.index:/app/math_problems_vector_store.faiss.index
+      - ./math_problems_vector_store.faiss.mappings:/app/math_problems_vector_store.faiss.mappings
+      - ./new_tools.csv:/app/new_tools.csv
+      - ./workflow_cache.pkl:/app/workflow_cache.pkl
+    restart: unless-stopped
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: pytest ./agents/test*py ./core/test*py
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}

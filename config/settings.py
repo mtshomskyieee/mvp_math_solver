@@ -18,6 +18,8 @@ DEFAULT_TEMPERATURE = 0
 
 # Sample problems for UI
 SAMPLE_PROBLEMS = [
+    "(5 mod 2)",
+    "round 1.578",
     "What is the square root of -1",
     "What is 25 + 37?",
     "Multiply 13 by 7",

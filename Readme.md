@@ -21,9 +21,9 @@ A Streamlit application that uses multiple AI agents to solve and verify math pr
 │
 ├── core/                      # Core functionality
 │   ├── __init__.py
-│   ├── math_toolbox.py        # Math tools implementation
+│   ├── math_toolbox.py         # Math tools implementation
 │   ├── virtual_tool_manager.py # Virtual tool creation and management
-│   └── callbacks.py           # Callback handlers
+│   └── callbacks.py            # Callback handlers
 │
 ├── agents/                    # Agent implementations
 │   ├── __init__.py
@@ -44,10 +44,6 @@ A Streamlit application that uses multiple AI agents to solve and verify math pr
 │   ├── sidebar.py             # Sidebar components
 │   └── problem_solver.py      # Problem solver UI
 │
-├── tests/                     # Unit tests
-│   ├── __init__.py
-│   ├── test_math_toolbox.py
-│   └── test_workflow.py
 │
 ├── main.py                    # Application entry point
 ├── requirements.txt           # Dependencies
@@ -69,7 +65,7 @@ This application uses a modular architecture with:
 - Virtual tool creation from successful problem-solving sequences
 - Integrated validation and retry workflow
 
-## running
+## Running
 
 1. Clone the repository
 2. Setup a virtual environment `python3 -m venv venv` then `source venv/bin/activate`
@@ -78,17 +74,23 @@ This application uses a modular architecture with:
 3. Install dependencies: `pip install -r requirements.txt`
 4. Set your OPENAI_API_KEY or edit main.py 's override_key with your key  
    4. ☝️☝Add your key
-5. `python main.py`
+5. Run `streamlit run main.py`
+
+## Running unit tests
+
+To run unit tests, run the following:
+- `pytest ./agents/test*py ./core/test*py`
+
 
 # Diagrams
 
+## Flow
+![flow_diagram.png](docs%2Fflow_diagram.png)
+
 ## Sequence
-![top_sequence.png](docs%2Ftop_sequence.png)
-![bottom_sequence.png](docs%2Fbottom_sequence.png)
+![sequence.png](docs%2Fsequence.png)
 
 ## Class
-![](docs/class_diagram.png)
+![class_diagram.png](docs%2Fclass_diagram.png)
 
 
-## Mermaid
-![](docs/class_relationships.png)

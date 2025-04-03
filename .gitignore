@@ -1,0 +1,16 @@
+# Ignore all .txt files
+*.txt
+
+# Ignore all files in the log directory
+/log
+
+# Ignore installed python stuff
+/venv
+
+# Ignore consolidated python file
+all.py
+
+*.pyc
+__pycache__
+
+setenv.sh

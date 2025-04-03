@@ -69,6 +69,11 @@ class MathSolverAgent:
                 description="Round a number to the specified decimal places. Format: 'number, decimal_places'"
             ),
             Tool(
+                name="avg",
+                func=self.toolbox.avg,
+                description="Round a number to the specified decimal places. Format: 'num1, num2, ...'"
+            ),
+            Tool(
                 name="get_user_input",
                 func=self.streamlit_user_input,
                 description="Get input from the user by asking a question."
@@ -166,8 +171,18 @@ class MathSolverAgent:
         # Pause execution to wait for user input
         raise StopException("Waiting for user input")
 
+
     def solve_problem(self, problem: str, callback_handler=None) -> str:
         """Solve a math problem by using available tools and virtual tools."""
+        # Check if this is sqrt of negative number
+        is_sqrt_negative = "square root" in problem.lower() and any(
+            term in problem for term in ["-1", "negative", "minus"]
+        )
+
+        if is_sqrt_negative:
+            logger.info("Detected square root of negative number problem")
+            # We may want to handle this directly to avoid repeated tool calls
+
         # Check if we have a virtual tool for this type of problem
         virtual_tool = self.virtual_tool_manager.find_matching_virtual_tool(problem)
 
@@ -233,15 +248,21 @@ class MathSolverAgent:
 
         # Use the agent to solve the problem
         try:
+            # For sqrt of negative numbers, provide specific guidance
+            if is_sqrt_negative:
+                additional_guidance = (
+                    " For square roots of negative numbers, you need to express the result as an imaginary number. "
+                    "Use the sqrt tool with the negative number directly, it will handle complex numbers correctly."
+                )
+            else:
+                additional_guidance = ""
+
             result = temp_agent.invoke(
                 {
                     "input": "Start with a fresh new math question with no priors."
                              f"Solve this math problem: {problem}. Use the available tools. "
                              "Do NOT perform calculations yourself. Always use a tool for ANY numerical calculation. "
-                             # This turned out to be a "less is more" situation, the following had a negative impact
-                             #"Even simple calculations like 2+2 must use the appropriate tool. "
-                             #"Break down complex calculations into step-by-step tool calls. "
-                             #"Show your reasoning and the result of each tool call explicitly."
+                             f"{additional_guidance}"
                 },
                 callbacks=callbacks
             )
@@ -250,6 +271,19 @@ class MathSolverAgent:
             if "error" not in result["output"].lower():
                 # Log the execution history to verify it's being populated
                 logger.info(f"Execution history: {self.execution_history}")
+
+                # For sqrt of negative numbers, if we have many repeated calls, optimize the sequence
+                if is_sqrt_negative and len(self.execution_history) > 3:
+                    # Check if all calls are sqrt(-1)
+                    all_sqrt_negative = all(
+                        step["tool"] == "sqrt" and step["tool_input"].strip() == "-1"
+                        for step in self.execution_history
+                    )
+
+                    if all_sqrt_negative:
+                        logger.info("Optimizing execution history for sqrt of negative number")
+                        # Keep just one call
+                        self.execution_history = [self.execution_history[0]]
 
                 if self.execution_history:  # Only record if we have tool usage
                     # Record successful sequence for future use
@@ -266,7 +300,8 @@ class MathSolverAgent:
                 else:
                     logger.warning(f"No tool usage recorded for problem: {problem}")
 
-            return result["output"]
+                return result["output"]
         except Exception as e:
             logger.error(f"Error solving problem: {str(e)}")
             return f"Failed to solve the problem: {str(e)}"
+

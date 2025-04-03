@@ -61,7 +61,12 @@ class VerificationAgent:
                 name="round_number",
                 func=self.toolbox.round_number,
                 description="Round a number to the specified decimal places. Format: 'number, decimal_places'"
-            )
+            ),
+            Tool(
+                name="avg",
+                func=self.toolbox.avg,
+                description="Round a number to the specified decimal places. Format: 'num1, num2, ...'"
+            ),
         ]
 
         # Initialize agent

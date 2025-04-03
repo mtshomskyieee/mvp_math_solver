@@ -9,6 +9,8 @@ from datetime import datetime
 from typing import Dict, List, Any, Optional
 from utils.logging_utils import setup_logger
 from core.math_toolbox import MathToolbox
+from core.vector_store import MathProblemVectorStore
+# Add these imports at the top of virtual_tool_manager.py
 
 logger = setup_logger("virtual_tool_manager")
 
@@ -20,12 +22,31 @@ class VirtualToolManager:
         self.successful_sequences = {}  # Maps problem_hash -> sequence of tool calls
         self.tool_failure_counts = {}  # Maps problem_hash -> failure count
         self.max_failures = max_failures  # Maximum allowed failures before removing a tool
+        # Initialize vector store
+        self.vector_store = MathProblemVectorStore()
+        # Try to load existing vector store
+        self.vector_store.load()
 
     def hash_problem(self, problem: str) -> str:
-        """Create a hash for a problem to identify similar problems."""
-        # Extract key features from the problem for similarity matching
-        # For simplicity, we're just using a hash of the problem text
-        return hashlib.md5(problem.lower().strip().encode()).hexdigest()
+        """Create a structure-focused hash for a problem to identify similar problems."""
+        # Strip whitespace and convert to lowercase
+        normalized = problem.lower().strip()
+
+        # Replace specific numbers with placeholders to focus on structure
+        # This will make (100 + 300) and (200 + 300) hash to the same value
+        pattern = r'(\d+)'
+
+        # First, extract the mathematical structure
+        structure = re.sub(pattern, 'N', normalized)
+
+        # For problems with the same structure, also consider operation pattern
+        operations = ''.join(c for c in normalized if c in '+-*/^()%')
+
+        # Combine structure and operations for a more robust hash
+        combined = f"{structure}|{operations}"
+
+        # Create hash based on this structural representation
+        return hashlib.md5(combined.encode()).hexdigest()
 
     def record_successful_sequence(self, problem: str, sequence: List[Dict[str, Any]], result: str):
         """Record a successful sequence of tool calls for a problem."""
@@ -40,6 +61,12 @@ class VirtualToolManager:
 
         # Create a virtual tool
         self._create_virtual_tool(problem_hash)
+
+        # Add to vector store
+        self.vector_store.add_problem(problem, problem_hash, sequence)
+
+        # Save the updated vector store
+        self.vector_store.save()
 
     def _optimize_tool_sequence(self, tool_sequence: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
@@ -489,41 +516,6 @@ class VirtualToolManager:
         else:
             return "General"
 
-    def record_tool_failure(self, problem_hash: str) -> bool:
-        """
-        Record a failure for a virtual tool and remove it if it exceeds the maximum allowed failures.
-
-        Args:
-            problem_hash: The hash of the problem associated with the failing tool
-
-        Returns:
-            bool: True if the tool was removed, False otherwise
-        """
-        if problem_hash not in self.tool_failure_counts:
-            self.tool_failure_counts[problem_hash] = 0
-
-        self.tool_failure_counts[problem_hash] += 1
-
-        # Check if we should remove this tool
-        if self.tool_failure_counts[problem_hash] >= self.max_failures:
-            if problem_hash in self.virtual_tools:
-                tool_name = self.virtual_tools[problem_hash]['name']
-                logger.warning(f"Removing unreliable virtual tool '{tool_name}' after {self.max_failures} failures")
-
-                # Remove the tool
-                del self.virtual_tools[problem_hash]
-
-                # Optionally, also remove the successful sequence to prevent recreating the same tool
-                if problem_hash in self.successful_sequences:
-                    del self.successful_sequences[problem_hash]
-
-                # Clear the failure count
-                del self.tool_failure_counts[problem_hash]
-
-                return True
-
-        return False
-
     def _identify_primary_operation(self, problem: str) -> str:
         """Identify the primary operation type of a problem."""
         problem_lower = problem.lower()
@@ -550,8 +542,6 @@ class VirtualToolManager:
 
         # Default to "unknown" if no clear operation is identified
         return "unknown"
-
-    # Add this method to the VirtualToolManager class
 
     def _is_tool_relevant_for_problem(self, problem: str, tool_sequence: List[Dict[str, Any]]) -> bool:
         """
@@ -606,17 +596,33 @@ class VirtualToolManager:
         # By default, consider the tool relevant
         return True
 
-
     def find_matching_virtual_tool(self, problem: str) -> Optional[Dict[str, Any]]:
-        """Find a virtual tool that can solve a similar problem."""
+        """Find a virtual tool that can solve a similar problem using vector similarity."""
+
+        # First, try canonical form matching
+        canonical_form = self._canonicalize_problem(problem)
+
+        # Look for tools with matching canonical form
+        matching_tools = []
+        for hash_key, tool in self.virtual_tools.items():
+            if hash_key in self.successful_sequences:
+                original_problem = self.successful_sequences[hash_key]["problem"]
+                original_canonical = self._canonicalize_problem(original_problem)
+
+                if canonical_form == original_canonical:
+                    matching_tools.append((hash_key, tool, 1.0))  # Perfect match
+
+        # If we found exact structural matches, use them
+        if matching_tools:
+            # Sort by sequence simplicity (shorter sequences first)
+            matching_tools.sort(key=lambda x: len(x[1].get('tool_sequence', [])))
+            best_match = matching_tools[0][1]
+            logger.info(f"Found structural match: {best_match['name']}")
+            return best_match
+
+
+        # Second check for exact hash match (very fast)
         problem_hash = self.hash_problem(problem)
-        problem_lower = problem.lower()
-
-        # First, identify the primary operation type
-        operation_type = self._identify_primary_operation(problem)
-        logger.info(f"Identified primary operation: {operation_type}")
-
-        # Check for exact match
         if problem_hash in self.virtual_tools:
             tool = self.virtual_tools[problem_hash]
             # Make sure the tool sequence is appropriate for this problem
@@ -626,85 +632,35 @@ class VirtualToolManager:
                 logger.info(f"Found exact match tool {tool['name']} but it's not relevant for this problem type.")
                 return None
 
-        # Parse the current problem to extract its structure
-        new_problem_numbers = self._parse_expression(problem)
+        # Use vector similarity to find similar problems
+        similar_problems = self.vector_store.find_similar_problems(problem, k=5)
 
-        # Count expected operations based on numbers in the problem
-        expected_op_count = self._estimate_operation_count(problem, new_problem_numbers)
-        logger.info(f"Estimated operations needed for problem: {expected_op_count}")
+        # Filter out problems with low similarity score
+        similar_problems = [(hash_id, score) for hash_id, score in similar_problems if score > 0.75]
 
-        best_match = None
-        best_match_score = 0
+        if not similar_problems:
+            logger.info("No similar problems found in vector store.")
+            return None
 
-        # Consider all available tools
-        for hash_key, tool in self.virtual_tools.items():
-            if 'tool_sequence' not in tool:
-                continue
+        logger.info(f"Found {len(similar_problems)} similar problems with vector similarity.")
 
-            # Get the original problem associated with this tool
-            original_problem = None
-            if hash_key in self.successful_sequences:
-                original_problem = self.successful_sequences[hash_key]["problem"]
-            else:
-                continue
+        # Check each similar problem in order of similarity
+        for problem_hash, similarity_score in similar_problems:
+            if problem_hash in self.virtual_tools:
+                tool = self.virtual_tools[problem_hash]
 
-            # Check if the operation types match
-            original_operation = self._identify_primary_operation(original_problem)
-            if original_operation != operation_type:
-                logger.info(
-                    f"Tool {tool['name']} has primary operation {original_operation}, but problem needs {operation_type}")
-                continue
+                # Log similarity information
+                logger.info(f"Considering tool {tool['name']} with similarity score {similarity_score:.3f}")
 
-            # Skip tools with too many or too few operations
-            tool_op_count = len(tool['tool_sequence'])
-            if abs(tool_op_count - expected_op_count) > 1:  # Allow small variations
-                logger.info(
-                    f"Tool {tool['name']} has {tool_op_count} operations, but problem needs ~{expected_op_count}")
-                continue
-
-            # Extract numbers from the original problem
-            original_problem_numbers = self._parse_expression(original_problem)
-
-            # Compare the number of operands in both problems
-            # For operations like addition and multiplication, the number of operands must match
-            if len(new_problem_numbers) != len(original_problem_numbers):
-                logger.info(
-                    f"Tool {tool['name']} works with {len(original_problem_numbers)} numbers, but problem has {len(new_problem_numbers)} numbers")
-                continue
-
-            # Check operation types
-            if not self._has_compatible_operations(problem, tool['tool_sequence']):
-                logger.info(f"Tool {tool['name']} has incompatible operation types for this problem")
-                continue
-
-            # Now check if the tool is relevant for this problem using our improved method
-            if not self._is_tool_relevant_for_problem(problem, tool['tool_sequence']):
-                logger.info(f"Tool {tool['name']} is not relevant for this problem type")
-                continue
-
-            # Get structure similarity score
-            structure_score = self._calculate_structure_similarity(
-                new_problem_numbers,
-                original_problem_numbers
-            )
-
-            # Calculate overall match score
-            problem_tokens = set(problem.lower().split())
-            description = tool["description"].lower()
-            desc_tokens = set(description.split())
-            token_overlap = len(problem_tokens.intersection(desc_tokens))
-
-            match_score = structure_score * 0.9 + min(1.0, token_overlap / 5) * 0.3
-
-            if match_score > best_match_score and match_score > 0.6:  # Threshold for a good match
-                best_match = tool
-                best_match_score = match_score
-
-        if best_match:
-            logger.info(f"Selected tool {best_match['name']} with match score {best_match_score:.2f}")
-            return best_match
+                # Check if the tool is appropriate for this problem
+                if 'tool_sequence' in tool and self._is_tool_relevant_for_problem(problem, tool['tool_sequence']):
+                    logger.info(f"Selected tool {tool['name']} with similarity score {similarity_score:.3f}")
+                    return tool
+                else:
+                    logger.info(f"Tool {tool['name']} not relevant for this problem type despite similarity.")
 
         return None
+
     def _estimate_operation_count(self, problem: str, numbers: List[Dict[str, Any]]) -> int:
         """Estimate how many operations are needed based on the problem text and numbers."""
         # Count explicit operation words
@@ -901,20 +857,68 @@ class VirtualToolManager:
         if len(new_numbers) == 0 and len(original_numbers) == 0:
             return 0.5
 
-        # Calculate similarity based on patterns of numbers and operations
-        similarity = 0.0
+        # Extract operation patterns (expressions like (a+b)/(c+d))
+        def extract_pattern(numbers):
+            # Sort numbers by position to ensure correct order
+            sorted_nums = sorted(numbers, key=lambda x: x['position'])
 
-        # Start with base similarity based on number count match
+            # Create pattern of operations and parentheses
+            pattern = []
+            for i, num in enumerate(sorted_nums):
+                if num['left_paren']:
+                    pattern.append('(')
+                pattern.append('N')  # Placeholder for number
+                if num['right_paren']:
+                    pattern.append(')')
+                if i < len(sorted_nums) - 1:
+                    if num['right_op']:
+                        pattern.append(num['right_op'])
+                    elif sorted_nums[i + 1]['left_op']:
+                        pattern.append(sorted_nums[i + 1]['left_op'])
+
+            return ''.join(pattern)
+
+        # Get patterns for both problems
+        pattern1 = extract_pattern(new_numbers)
+        pattern2 = extract_pattern(original_numbers)
+
+        # Calculate pattern similarity
+        from difflib import SequenceMatcher
+        pattern_similarity = SequenceMatcher(None, pattern1, pattern2).ratio()
+
+        # Weight pattern similarity highly
+        similarity = pattern_similarity * 0.8
+
+        # Add additional weight for matching number of operands
         if len(new_numbers) == len(original_numbers):
-            similarity += 0.5
-        else:
-            similarity += 0.3
-
-        # Check pattern of operations between numbers
-        operation_pattern_match = self._compare_operation_patterns(new_numbers, original_numbers)
-        similarity += operation_pattern_match * 0.5
+            similarity += 0.2
 
         return min(1.0, similarity)  # Cap at 1.0
+
+    def _canonicalize_problem(self, problem: str) -> str:
+        """Convert a problem to a canonical form to improve matching."""
+        # Normalize whitespace
+        normalized = ' '.join(problem.lower().split())
+
+        # Replace specific numbers with 'N' to focus on structure
+        # But keep the relative positions of operands
+
+        # For fraction pattern like (a+b)/(c+d) - very common in your examples
+        fraction_pattern = r'\(([^)]+)\)\s*\/\s*\(([^)]+)\)'
+        fraction_match = re.search(fraction_pattern, normalized)
+
+        if fraction_match:
+            numerator = fraction_match.group(1)
+            denominator = fraction_match.group(2)
+
+            # Check if numerator and denominator both contain addition
+            if '+' in numerator and '+' in denominator:
+                return "(N+N)/(N+N)"  # Canonical form for this pattern
+
+        # Handle other patterns as needed
+        # @TODO
+
+        return normalized
 
     def _compare_operation_patterns(self, nums1: List[Dict[str, Any]],
                                     nums2: List[Dict[str, Any]]) -> float:
@@ -950,11 +954,39 @@ class VirtualToolManager:
         matches = sum(1 for i in range(min_len) if pattern1[i] == pattern2[i])
         return matches / min_len
 
-    # Add these imports at the top of virtual_tool_manager.py
-    import csv
-    import os
-    import inspect
-    import datetime
+    # Add method to record tool failures that also updates the vector store
+    def record_tool_failure(self, problem_hash: str) -> bool:
+        """Record a failure for a virtual tool and remove it if it exceeds the maximum allowed failures."""
+        if problem_hash not in self.tool_failure_counts:
+            self.tool_failure_counts[problem_hash] = 0
+
+        self.tool_failure_counts[problem_hash] += 1
+
+        # Check if we should remove this tool
+        if self.tool_failure_counts[problem_hash] >= self.max_failures:
+            if problem_hash in self.virtual_tools:
+                tool_name = self.virtual_tools[problem_hash]['name']
+                logger.warning(f"Removing unreliable virtual tool '{tool_name}' after {self.max_failures} failures")
+
+                # Remove the tool
+                del self.virtual_tools[problem_hash]
+
+                # Also remove from the vector store
+                self.vector_store.remove_problem(problem_hash)
+
+                # Save the updated vector store
+                self.vector_store.save()
+
+                # Optionally, also remove the successful sequence to prevent recreating the same tool
+                if problem_hash in self.successful_sequences:
+                    del self.successful_sequences[problem_hash]
+
+                # Clear the failure count
+                del self.tool_failure_counts[problem_hash]
+
+                return True
+
+        return False
 
     def serialize_virtual_tool(self, problem_hash: str) -> str:
         """
@@ -1037,8 +1069,6 @@ class VirtualToolManager:
                 tools_saved += 1
 
             logger.info(f"Saved {tools_saved} virtual tools to {filename}")
-
-    # Add this method to the VirtualToolManager class in math_solver/core/virtual_tool_manager.py
 
     def import_virtual_tools_from_csv(self, filename="new_tools.csv"):
         """
@@ -1192,3 +1222,61 @@ class VirtualToolManager:
         tool_info = tool_info.replace('\\n', '\n')
 
         return tool_info
+
+    def migrate_existing_tools_to_vector_store(self):
+        """Migrate all existing virtual tools to the vector store."""
+        migrated_count = 0
+
+        for problem_hash, tool_data in self.virtual_tools.items():
+            if problem_hash in self.successful_sequences:
+                seq_data = self.successful_sequences[problem_hash]
+                problem = seq_data["problem"]
+                sequence = seq_data["sequence"]
+
+                # Add to vector store
+                self.vector_store.add_problem(problem, problem_hash, sequence)
+                migrated_count += 1
+
+        if migrated_count > 0:
+            self.vector_store.save()
+            logger.info(f"Migrated {migrated_count} existing tools to vector store")
+
+        return migrated_count
+
+    def _normalize_tool_sequence(self, tool_sequence: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Normalize a tool sequence to a canonical form."""
+        # For fraction problems like (a+b)/(c+d), normalize to use divide directly when possible
+
+        # Check if the sequence matches pattern: sum -> sum -> sum -> divide
+        if len(tool_sequence) >= 4:
+            # Check if all beginning steps are sums followed by a divide
+            if all(step['tool'] == 'sum' for step in tool_sequence[:-1]) and \
+                    tool_sequence[-1]['tool'] == 'divide':
+                # Check if this is a simple fraction
+                return [{'tool': 'divide', 'tool_input': tool_sequence[-1]['tool_input']}]
+
+        return tool_sequence
+
+    def _detect_common_pattern(self, problem: str) -> Optional[Dict[str, Any]]:
+        """Detect if the problem matches a common mathematical pattern with a known solution."""
+
+        # Check for pattern (a+b)/(c+d)
+        fraction_pattern = r'\((\d+)\s*\+\s*(\d+)\)\s*\/\s*\((\d+)\s*\+\s*(\d+)\)'
+        match = re.search(fraction_pattern, problem)
+
+        if match:
+            a, b, c, d = map(int, match.groups())
+
+            # Create a simple solution that directly uses divide
+            # First calculate numerator and denominator
+            numerator = a + b
+            denominator = c + d
+
+            # Look for a tool that uses divide directly
+            for hash_key, tool in self.virtual_tools.items():
+                if 'tool_sequence' in tool and len(tool['tool_sequence']) == 1:
+                    if tool['tool_sequence'][0]['tool'] == 'divide':
+                        logger.info(f"Found direct divide tool for fraction pattern: {tool['name']}")
+                        return tool
+
+        return None

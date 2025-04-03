@@ -119,3 +119,18 @@ def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManage
             if 'tool_sequence' in tool:
                 sequence_str = " → ".join([step['tool'] for step in tool['tool_sequence']])
                 st.sidebar.markdown(f"*Sequence: {sequence_str}*")
+
+    # Vector Store Information
+    st.sidebar.header("Vector Store")
+
+    # Show vector store statistics
+    vector_store_size = len(virtual_tool_manager.vector_store.problem_map)
+    st.sidebar.write(f"Problems in vector store: {vector_store_size}")
+
+    # Add button to migrate existing tools to vector store
+    if st.sidebar.button("Migrate Tools to Vector Store"):
+        migrated = virtual_tool_manager.migrate_existing_tools_to_vector_store()
+        if migrated > 0:
+            st.sidebar.success(f"Migrated {migrated} tools to vector store!")
+        else:
+            st.sidebar.info("No new tools to migrate.")

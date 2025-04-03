@@ -15,8 +15,12 @@ from ui.problem_solver import problem_input_section, solve_problem_section, disp
 import atexit
 from workflows.math_workflow import save_workflow_cache
 
+from utils.logging_utils import setup_logger
+logger = setup_logger("main_app")
+
 # Register the save_workflow_cache function to run on exit
 atexit.register(save_workflow_cache)
+
 
 def initialize_session_state():
     """Initialize session state variables."""
@@ -25,6 +29,18 @@ def initialize_session_state():
 
     if "virtual_tool_manager" not in st.session_state:
         st.session_state.virtual_tool_manager = VirtualToolManager()
+
+        # Attempt to load existing vector store
+        if hasattr(st.session_state.virtual_tool_manager, 'vector_store'):
+            try:
+                loaded = st.session_state.virtual_tool_manager.vector_store.load()
+                if loaded:
+                    logger.info("Loaded existing vector store")
+                else:
+                    # Migrate existing tools to vector store on first run
+                    st.session_state.virtual_tool_manager.migrate_existing_tools_to_vector_store()
+            except Exception as e:
+                logger.error(f"Error loading vector store: {e}")
 
     if "solver_agent" not in st.session_state:
         st.session_state.solver_agent = MathSolverAgent(

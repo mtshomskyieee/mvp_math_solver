@@ -69,6 +69,11 @@ class MathSolverAgent:
                 description="Round a number to the specified decimal places. Format: 'number, decimal_places'"
             ),
             Tool(
+                name="avg",
+                func=self.toolbox.avg,
+                description="Round a number to the specified decimal places. Format: 'num1, num2, ...'"
+            ),
+            Tool(
                 name="get_user_input",
                 func=self.streamlit_user_input,
                 description="Get input from the user by asking a question."

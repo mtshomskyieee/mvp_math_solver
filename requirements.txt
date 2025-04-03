@@ -25,3 +25,4 @@ tiktoken>=0.5.1
 pydantic>=2.3.0
 numexpr
 smolagents
+maturin

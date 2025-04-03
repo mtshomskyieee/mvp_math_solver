@@ -80,6 +80,12 @@ This application uses a modular architecture with:
    4. ☝️☝Add your key
 5. Run `streamlit run main.py`
 
+## Running unit tests
+
+To run unit tests, run the following:
+- `pytest ./agents/test*py ./core/test*py`
+
+
 # Diagrams
 
 ## Sequence

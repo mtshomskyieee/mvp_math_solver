@@ -21,9 +21,9 @@ A Streamlit application that uses multiple AI agents to solve and verify math pr
 │
 ├── core/                      # Core functionality
 │   ├── __init__.py
-│   ├── math_toolbox.py        # Math tools implementation
+│   ├── math_toolbox.py         # Math tools implementation
 │   ├── virtual_tool_manager.py # Virtual tool creation and management
-│   └── callbacks.py           # Callback handlers
+│   └── callbacks.py            # Callback handlers
 │
 ├── agents/                    # Agent implementations
 │   ├── __init__.py
@@ -44,10 +44,6 @@ A Streamlit application that uses multiple AI agents to solve and verify math pr
 │   ├── sidebar.py             # Sidebar components
 │   └── problem_solver.py      # Problem solver UI
 │
-├── tests/                     # Unit tests
-│   ├── __init__.py
-│   ├── test_math_toolbox.py
-│   └── test_workflow.py
 │
 ├── main.py                    # Application entry point
 ├── requirements.txt           # Dependencies
@@ -88,13 +84,13 @@ To run unit tests, run the following:
 
 # Diagrams
 
+## Flow
+![flow_diagram.png](docs%2Fflow_diagram.png)
+
 ## Sequence
-![top_sequence.png](docs%2Ftop_sequence.png)
-![bottom_sequence.png](docs%2Fbottom_sequence.png)
+![sequence.png](docs%2Fsequence.png)
 
 ## Class
-![](docs/class_diagram.png)
+![class_diagram.png](docs%2Fclass_diagram.png)
 
 
-## Mermaid
-![](docs/class_relationships.png)

@@ -1,6 +1,6 @@
 # math_solver/workflows/math_workflow.py
 import time
-import re  # Add this import for regex functions
+import re
 from typing import Dict, Any
 from config.settings import MAX_VERIFICATION_RETRIES
 from utils.exceptions import StopException
@@ -15,10 +15,15 @@ logger = setup_logger("math_workflow")
 _workflow_cache = {}
 
 
-def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_handler=None) -> Dict[str, Any]:
+def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm, callback_handler=None) -> Dict[
+    str, Any]:
     """
-    Execute the math problem solving workflow with retries and caching:
-    Math_solver_agent -> Validation_agent, with up to 3 retries if validation fails
+    Execute the math problem solving workflow with multiple agents and majority voting:
+    1. Math_solver_agent
+    2. Validation_agent
+    3. CAS_agent
+
+    Use majority voting (2 out of 3 agreement) to determine the final answer.
     """
     global _workflow_cache
 
@@ -48,7 +53,7 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
             cached_result_copy['from_cache'] = True
             return cached_result_copy
 
-    # Rest of the function remains the same...
+    # Initialize variables
     max_retries = MAX_VERIFICATION_RETRIES
     attempts = 0
     solution = None
@@ -88,10 +93,15 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
     if waiting_for_input:
         raise StopException("Waiting for user input in workflow")
 
+    # Solutions from each agent
+    solver_solution = None
+    validation_solution = None
+    cas_solution = None
+
     while attempts < max_retries and not is_verified:
         attempts += 1
 
-        # Solve the problem
+        # Solve the problem with all three agents
         if callback_handler:
             callback_handler.container.write(f"Attempt {attempts}/{max_retries}: Solving the problem...")
 
@@ -103,15 +113,15 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
                 # Call the virtual tool function
                 fn_ptr = virtual_tool["function"]
                 virtual_tool_solution = fn_ptr(input_str=problem, math_toolbox=solver_agent.toolbox)
-                solution = virtual_tool_solution
+                solver_solution = virtual_tool_solution
                 used_virtual_tool = True
 
                 if callback_handler:
-                    callback_handler.container.write(f"Virtual tool produced solution: {solution}")
+                    callback_handler.container.write(f"Virtual tool produced solution: {solver_solution}")
 
                 # Immediately verify the virtual tool result
                 is_verified, verification_result = verification_agent.verify_result(
-                    problem, solution, callback_handler
+                    problem, solver_solution, callback_handler
                 )
 
                 # If verification fails, mark this as a virtual tool failure and try again with standard solver
@@ -135,7 +145,7 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
                         callback_handler.container.write(f"Falling back to standard solver...")
 
                     # Clear the virtual tool solution so we use the standard solver next
-                    solution = None
+                    solver_solution = None
                     used_virtual_tool = False
                     virtual_tool = None
                     continue
@@ -160,15 +170,19 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
                         )
 
                 # Fall back to the regular solver if the virtual tool fails
-                solution = None
+                solver_solution = None
                 used_virtual_tool = False
                 virtual_tool = None
                 continue
 
-        # If we don't have a solution yet (either no virtual tool or it failed), use the regular solver
-        if solution is None:
+        # If we don't have a solution yet, solve with all three agents
+        if solver_solution is None:
+            # 1. Use Math Solver Agent
             try:
-                solution = solver_agent.solve_problem(problem, callback_handler)
+                if callback_handler:
+                    callback_handler.container.write("Solving with Math Solver Agent...")
+
+                solver_solution = solver_agent.solve_problem(problem, callback_handler)
                 used_virtual_tool = False
 
                 # Check if a new virtual tool was created
@@ -184,56 +198,108 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
             except StopException:
                 # Propagate user input exceptions
                 raise
+            except Exception as e:
+                logger.error(f"Math Solver Agent error: {str(e)}")
+                if callback_handler:
+                    callback_handler.container.write(f"Math Solver Agent error: {str(e)}")
 
-        # Verify the solution if we haven't already
-        if not is_verified:
+            # 2. Use Validation Agent
+            try:
+                if callback_handler:
+                    callback_handler.container.write("Solving with Validation Agent...")
+
+                # Get the solution from validation agent
+                # We'll need to extract it from its verification methods
+                validation_result, _ = verification_agent.verify_result(problem, "Unknown", callback_handler)
+                validation_solution = _extract_verification_solution(validation_result)
+
+                if callback_handler:
+                    callback_handler.container.write(f"Validation Agent solution: {validation_solution}")
+
+            except Exception as e:
+                logger.error(f"Validation Agent error: {str(e)}")
+                if callback_handler:
+                    callback_handler.container.write(f"Validation Agent error: {str(e)}")
+
+            # 3. Use CAS Agent
+            try:
+                if callback_handler:
+                    callback_handler.container.write("Solving with CAS Agent...")
+
+                cas_solution = cas_agent.solve_problem(problem, callback_handler)
+
+                if callback_handler:
+                    callback_handler.container.write(f"CAS Agent solution: {cas_solution}")
+                    callback_handler.container.markdown(f"### 🧮 CAS Analysis Result\n{cas_solution}")
+
+
+            except Exception as e:
+                logger.error(f"CAS Agent error: {str(e)}")
+                if callback_handler:
+                    callback_handler.container.write(f"CAS Agent error: {str(e)}")
+
+            # Now perform majority voting
             if callback_handler:
-                callback_handler.container.write(f"Verifying solution from attempt {attempts}...")
+                callback_handler.container.write("Performing majority voting...")
 
-            is_verified, verification_result = verification_agent.verify_result(
-                problem, solution, callback_handler
-            )
+            # Normalize solutions for comparison
+            normalized_solutions = {}
+            if solver_solution:
+                normalized_solutions["solver"] = _normalize_solution(solver_solution)
+            if validation_solution:
+                normalized_solutions["validation"] = _normalize_solution(validation_solution)
+            if cas_solution:
+                normalized_solutions["cas"] = _normalize_solution(cas_solution)
 
-            if is_verified:
+            # Log the normalized solutions
+            if callback_handler:
+                for agent, norm_sol in normalized_solutions.items():
+                    callback_handler.container.write(f"Normalized {agent} solution: {norm_sol}")
+
+            # Count solutions that agree with each other
+            solution_counts = {}
+            for agent1, sol1 in normalized_solutions.items():
+                if sol1 not in solution_counts:
+                    solution_counts[sol1] = {"count": 1, "agents": [agent1]}
+                else:
+                    solution_counts[sol1]["count"] += 1
+                    solution_counts[sol1]["agents"].append(agent1)
+
+            # Find majority solution (if any)
+            majority_solution = None
+            for sol, data in solution_counts.items():
+                logger.info(f"agent solutions: {sol}, {data}")
+                if data["count"] >= 2:  # At least 2 out of 3 agree
+                    majority_solution = sol
+                    majority_agents = data["agents"]
+                    break
+
+            logger.info(f"Majority solutions: {majority_solution}")
+            if majority_solution and callback_handler:
+                callback_handler.container.write(f"Majority solution found: {majority_solution}")
+                callback_handler.container.write(f"Agents that agree: {', '.join(majority_agents)}")
+
+                logger.info(f"Majority solution found: {majority_solution}")
+                logger.info(f"Agents that agree: {', '.join(majority_agents)}")
+
+                # Use the majority solution
+                solution = majority_solution
+                is_verified = True
+                verification_result = f"Solution verified by majority vote ({', '.join(majority_agents)})"
+            else:
+                # No majority - default to solver solution with verification
                 if callback_handler:
-                    callback_handler.container.write(f"✅ Solution verified on attempt {attempts}!")
-                break
-            elif attempts < max_retries:
-                if callback_handler:
-                    callback_handler.container.write(f"❌ Verification failed on attempt {attempts}. Trying again...")
+                    callback_handler.container.write(
+                        "No majority found, using Math Solver Agent solution with verification...")
 
-                # If we used a virtual tool and it failed verification, record the failure
-                if used_virtual_tool and virtual_tool_hash:
-                    # Record the failure and add to our set of failed tools
-                    tool_removed = virtual_tool_manager.record_tool_failure(virtual_tool_hash)
-                    failed_virtual_tools.add(virtual_tool_hash)
-
-                    if tool_removed and callback_handler:
-                        callback_handler.container.write(
-                            f"⚠️ Virtual tool {virtual_tool['name']} has been removed due to reaching {virtual_tool_manager.max_failures} failures."
-                        )
-
-                    # Don't try to use this virtual tool again
-                    virtual_tool = None
-                    used_virtual_tool = False
-
-                # If this was a newly created virtual tool and verification failed, delete it immediately
-                if newly_created_virtual_tool and newly_created_virtual_tool in virtual_tool_manager.virtual_tools:
-                    tool_name = virtual_tool_manager.virtual_tools[newly_created_virtual_tool]['name']
-                    if callback_handler:
-                        callback_handler.container.write(
-                            f"⚠️ Removing newly created virtual tool {tool_name} due to verification failure."
-                        )
-
-                    # Delete the virtual tool
-                    del virtual_tool_manager.virtual_tools[newly_created_virtual_tool]
-
-                    # Also remove it from the successful sequences to prevent recreation
-                    if newly_created_virtual_tool in virtual_tool_manager.successful_sequences:
-                        del virtual_tool_manager.successful_sequences[newly_created_virtual_tool]
-
-                    # Reset the tracking variable
-                    newly_created_virtual_tool = None
+                solution = solver_solution
+                # Verify the solution from solver agent
+                is_verified, verification_result = verification_agent.verify_result(
+                    problem, solution, callback_handler
+                )
+        else:
+            # We already have a solution from virtual tool
+            solution = solver_solution
 
     # After all attempts, if still not verified and we created a virtual tool, remove it
     if not is_verified and newly_created_virtual_tool and newly_created_virtual_tool in virtual_tool_manager.virtual_tools:
@@ -288,7 +354,12 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
         "attempts": attempts,
         "used_virtual_tool": used_virtual_tool,
         "virtual_tool_info": virtual_tool_info,
-        "from_cache": False
+        "from_cache": False,
+        "agent_solutions": {
+            "solver": solver_solution,
+            "validation": validation_solution,
+            "cas": cas_solution
+        }
     }
 
     # Only cache verified solutions
@@ -301,6 +372,77 @@ def math_workflow(problem: str, solver_agent, verification_agent, vtm, callback_
         virtual_tool_manager.save_virtual_tools_to_csv()
 
     return result
+
+
+def _normalize_solution(solution_text):
+    """Normalize a solution string for comparison."""
+    if not solution_text:
+        return None
+
+    # Convert to lowercase and remove extra whitespace
+    normalized = solution_text.lower().strip()
+
+    # Extract numeric value if possible
+    numeric_match = re.search(r'[-+]?\d*\.?\d+', normalized)
+    if numeric_match:
+        try:
+            # Convert to float and format consistently
+            value = float(numeric_match.group(0))
+            # Return as integer if it's a whole number
+            if value.is_integer():
+                return str(int(value))
+            # Otherwise return with limited precision
+            return f"{value:.6f}".rstrip('0').rstrip('.')
+        except:
+            pass
+
+    # For complex numbers, normalize format
+    if 'i' in normalized:
+        complex_match = re.search(r'([-+]?\d*\.?\d*)\s*\+\s*([-+]?\d*\.?\d*)i', normalized)
+        if complex_match:
+            real = float(complex_match.group(1) or 0)
+            imag = float(complex_match.group(2) or 1)
+            if real == 0:
+                if imag == 1:
+                    return "i"
+                elif imag == -1:
+                    return "-i"
+                else:
+                    return f"{imag}i"
+            else:
+                if imag == 1:
+                    return f"{real}+i"
+                elif imag == -1:
+                    return f"{real}-i"
+                elif imag > 0:
+                    return f"{real}+{imag}i"
+                else:
+                    return f"{real}{imag}i"
+
+    # Return the cleaned text if we couldn't extract a number
+    return normalized
+
+
+def _extract_verification_solution(verification_text):
+    """Extract solution from verification agent output."""
+    if not verification_text:
+        return None
+
+    # Try to find the "Expected X" or "correct answer is X" pattern
+    expected_match = re.search(r'expected\s+(.+?)(?:\.|$)', verification_text.lower())
+    if expected_match:
+        return expected_match.group(1).strip()
+
+    correct_match = re.search(r'correct\s+answer\s+is\s+(.+?)(?:\.|$)', verification_text.lower())
+    if correct_match:
+        return correct_match.group(1).strip()
+
+    # Look for EXACT_ANSWER format
+    exact_match = re.search(r'EXACT_ANSWER:\s+(.+?)(?:\.|$)', verification_text)
+    if exact_match:
+        return exact_match.group(1).strip()
+
+    return None
 
 
 def save_workflow_cache():

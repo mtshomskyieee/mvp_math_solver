@@ -4,17 +4,16 @@ from core.math_toolbox import MathToolbox
 from core.virtual_tool_manager import VirtualToolManager
 
 
-# Modify math_solver/ui/sidebar.py
-
 def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManager):
     """Render the sidebar components."""
-    # # Sidebar info
-    # st.sidebar.header("Agents")
-    # st.sidebar.markdown("""
-    # 1. Math Solver Agent - Uses tools to solve problems
-    # 2. Verification Agent - Verifies solutions
-    # 3. Virtual Tool Manager - Creates new tools from successful sequences
-    # """)
+    # Sidebar info
+    #st.sidebar.header("Agents")
+    #st.sidebar.markdown("""
+    #1. Math Solver Agent - Uses tools to solve problems
+    #2. Verification Agent - Verifies solutions
+    #3. CAS Agent - Uses Computer Algebra System (SymPy)
+    #4. Virtual Tool Manager - Creates new tools from successful sequences
+    #""")
 
     # Add toggle for tool errors
     st.sidebar.header("Settings")

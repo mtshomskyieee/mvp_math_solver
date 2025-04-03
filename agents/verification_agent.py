@@ -21,6 +21,7 @@ class VerificationAgent:
         self.llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0, streaming=True)
 
         # Create tools
+        """
         self.tools = [
             Tool(
                 name="sum",
@@ -68,7 +69,8 @@ class VerificationAgent:
                 description="Round a number to the specified decimal places. Format: 'num1, num2, ...'"
             ),
         ]
-
+        """
+        self.tools = []
         # Initialize agent
         self.memory = ConversationBufferMemory(return_messages=True)
         self.agent = initialize_agent(
@@ -90,10 +92,28 @@ class VerificationAgent:
             if callback_handler:
                 callback_handler.container.write("Verification agent is independently solving the problem...")
 
+            """
+                                "input": f"Solve this math problem precisely: {problem}. "
+                                         f"Use the tools to calculate the exact answer. "
+                                         f"After solving, respond with only the result labeled as 'EXACT_ANSWER: ' followed by the answer."
+            """
+
+            """
+             solve the following math problem with precision: {problem}. Utilize the appropriate
+             mathematical tools and methods to derive the exact answer. Your response should
+             consist solely of the result, clearly labeled as 'EXACT_ANSWER: ' followed by 
+             the calculated answer. Ensure to show full clarity in your calculations 
+             without any additional explanations.
+            """
+
             result = self.agent.invoke(
                 {
                     "input": f"Solve this math problem precisely: {problem}. "
-                             f"Use the tools to calculate the exact answer. "
+                             f"Use the appropriate mathematical tools and methods to derive the exact numeric answer. "
+                             f"Format responses using Parenthesis, Plus, Minus, Multiply, and Caret"
+                             f"If there is a complex answer, create a polynomial with real and complex numbers"
+                             f"Always reduce answer to a decimal approximation when possible."
+                             f"sqrt(integer) will be represented by a float; for example √4 = 2.0 "
                              f"After solving, respond with only the result labeled as 'EXACT_ANSWER: ' followed by the answer."
                 },
                 callbacks=[callback_handler] if callback_handler else None

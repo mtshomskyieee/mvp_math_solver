@@ -1,4 +1,4 @@
-# math_solver/ui/main_app.py
+# math_solver/ui/main_app.py (modified)
 import streamlit as st
 import json
 import time
@@ -8,6 +8,7 @@ from core.math_toolbox import MathToolbox
 from core.virtual_tool_manager import VirtualToolManager
 from agents.solver_agent import MathSolverAgent
 from agents.verification_agent import VerificationAgent
+from agents.cas_agent import CASAgent  # Import the new CAS agent
 from workflows.math_workflow import math_workflow
 from ui.sidebar import render_sidebar
 from ui.problem_solver import problem_input_section, solve_problem_section, display_solution_results
@@ -16,6 +17,7 @@ import atexit
 from workflows.math_workflow import save_workflow_cache
 
 from utils.logging_utils import setup_logger
+
 logger = setup_logger("main_app")
 
 # Register the save_workflow_cache function to run on exit
@@ -51,6 +53,9 @@ def initialize_session_state():
     if "verification_agent" not in st.session_state:
         st.session_state.verification_agent = VerificationAgent(st.session_state.toolbox)
 
+    if "cas_agent" not in st.session_state:
+        st.session_state.cas_agent = CASAgent()  # Initialize the new CAS agent
+
     # Add session state variables for the process flow
     if "sidebar_update_trigger" not in st.session_state:
         st.session_state.sidebar_update_trigger = False
@@ -65,13 +70,15 @@ def initialize_session_state():
     if "evaluation_results" not in st.session_state:
         st.session_state.evaluation_results = None
 
+
 def get_virtual_tool_manager():
     """Get the virtual tool manager from session state."""
     if "virtual_tool_manager" in st.session_state:
         return st.session_state.virtual_tool_manager
     return None
 
-def run_evaluation_section(solver_agent, verification_agent):
+
+def run_evaluation_section(solver_agent, verification_agent, cas_agent):  # Add cas_agent to parameters
     """Render the evaluation section."""
     st.header("Run Evaluation")
 
@@ -88,7 +95,13 @@ def run_evaluation_section(solver_agent, verification_agent):
 
                 # Time the solution
                 start_time = time.time()
-                result = math_workflow(problem=problem, solver_agent=solver_agent, verification_agent=verification_agent, vtm=st.session_state.virtual_tool_manager)
+                result = math_workflow(
+                    problem=problem,
+                    solver_agent=solver_agent,
+                    verification_agent=verification_agent,
+                    cas_agent=cas_agent,  # Add the CAS agent
+                    vtm=st.session_state.virtual_tool_manager
+                )
                 solution_time = time.time() - start_time
 
                 # Add solution time to result
@@ -133,6 +146,14 @@ def display_evaluation_results():
             st.markdown(f"**Verified**: {'✅ Yes' if result['is_verified'] else '❌ No'}")
             st.markdown(f"**Attempts**: {result['attempts']}")
             st.markdown(f"**Time**: {result['solution_time']:.2f} seconds")
+
+            # Display all agent solutions
+            if 'agent_solutions' in result:
+                st.markdown("**Agent Solutions**:")
+                for agent, solution in result['agent_solutions'].items():
+                    if solution:
+                        st.markdown(f"- {agent.capitalize()}: {solution}")
+
             st.markdown("---")
 
         # Add a button to clear results if desired
@@ -165,6 +186,7 @@ def app():
                     problem=context["problem"],
                     solver_agent=context["solver_agent"],
                     verification_agent=context["verification_agent"],
+                    cas_agent=st.session_state.cas_agent,  # Add CAS agent
                     vtm=st.session_state.virtual_tool_manager,
                     callback_handler=context["callback_handler"]
                 )
@@ -194,7 +216,8 @@ def app():
         solve_problem_section(
             problem,
             st.session_state.solver_agent,
-            st.session_state.verification_agent
+            st.session_state.verification_agent,
+            st.session_state.cas_agent  # Pass the CAS agent
         )
         display_solution_results()
 
@@ -202,6 +225,7 @@ def app():
     with right_col:
         run_evaluation_section(
             st.session_state.solver_agent,
-            st.session_state.verification_agent
+            st.session_state.verification_agent,
+            st.session_state.cas_agent  # Pass the CAS agent
         )
         display_evaluation_results()

@@ -1,2 +1,4 @@
 pip install maturin
-maturin develop
+cd core
+maturin build --release
+pip install target/wheels/*.whl

@@ -1,39 +1,30 @@
 flowchart TD
-    A[User inputs problem] --> B{Check cache}
-    B -->|Found in cache| C[Return cached solution]
-    B -->|Not in cache| D{Check for virtual tool}
+    Start([Start]) --> InputProblem[Input Math Problem]
+    InputProblem --> CheckVirtualTool{Check for\nvirtual tool?}
     
-    D -->|Virtual tool found| E[Solve with virtual tool]
-    D -->|No virtual tool| J[Solve with agents]
+    CheckVirtualTool -->|Found| UseVirtualTool[Use Virtual Tool]
+    CheckVirtualTool -->|Not Found| SolveWithAgents[Solve with Agents]
     
-    E --> F{Verify solution}
-    F -->|Solution verified| G[Return verified solution]
-    F -->|Verification failed| H[Record tool failure]
-    H --> I{Max failures reached?}
-    I -->|Yes| W[Remove virtual tool]
-    I -->|No| J
+    UseVirtualTool --> VerifySolution{Verify\nSolution}
     
-    J --> K[Solve with solver agent]
-    J --> L[Solve with validation agent]
-    J --> M[Solve with CAS agent]
+    SolveWithAgents --> SolverAgentProcess[Math Solver Agent Process]
+    SolverAgentProcess --> ValidationAgentProcess[Validation Agent Process] 
+    ValidationAgentProcess --> CASAgentProcess[CAS Agent Process]
+    CASAgentProcess --> MajorityVoting[Majority Voting]
     
-    K & L & M --> N[Perform majority voting]
-    N -->|No majority| O[Use solver's solution]
-    N -->|Majority found| P[Use majority solution]
+    MajorityVoting --> VerifySolution
     
-    O --> Q{Verify solution}
-    P --> Q
+    VerifySolution -->|Verified| RecordSequence[Record Successful Sequence]
+    VerifySolution -->|Not Verified\n< Max Retries| RetryAttempt[Retry with Different Approach]
+    RetryAttempt --> SolveWithAgents
     
-    Q -->|Verified| R[Record successful sequence]
-    Q -->|Not verified| S{Retry limit reached?}
+    VerifySolution -->|Not Verified\n>= Max Retries| ContinueAnyway[Use Best Solution]
     
-    S -->|Yes| T[Return unverified solution]
-    S -->|No| U[Retry with different approach]
-    U --> K
+    RecordSequence --> CreateVirtualTool[Create Virtual Tool]
+    CreateVirtualTool --> UpdateVectorStore[Update Vector Store]
     
-    R --> V[Create virtual tool]
-    V --> G
+    ContinueAnyway --> ReturnResult[Return Result]
+    UpdateVectorStore --> ReturnResult
     
-    G --> X[Cache result]
-    X --> Y[Return final solution to user]
-    T --> Y
+    ReturnResult --> DisplaySolution[Display Solution]
+    DisplaySolution --> End([End])

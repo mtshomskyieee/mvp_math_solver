@@ -1,13 +1,13 @@
 # math_solver/workflows/math_workflow.py
 import time
 import re
+import os
+import pickle
 from typing import Dict, Any
 from config.settings import MAX_VERIFICATION_RETRIES
 from utils.exceptions import StopException
 from utils.logging_utils import setup_logger
 import streamlit as st
-import os
-import pickle
 
 logger = setup_logger("math_workflow")
 
@@ -210,8 +210,8 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
 
                 # Get the solution from validation agent
                 # We'll need to extract it from its verification methods
-                validation_result, _ = verification_agent.verify_result(problem, "Unknown", callback_handler)
-                validation_solution = _extract_verification_solution(validation_result)
+                _, validation_text = verification_agent.verify_result(problem, "Unknown", callback_handler)
+                validation_solution = _extract_verification_solution(validation_text)
 
                 if callback_handler:
                     callback_handler.container.write(f"Validation Agent solution: {validation_solution}")
@@ -231,7 +231,6 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
                 if callback_handler:
                     callback_handler.container.write(f"CAS Agent solution: {cas_solution}")
                     callback_handler.container.markdown(f"### 🧮 CAS Analysis Result\n{cas_solution}")
-
 
             except Exception as e:
                 logger.error(f"CAS Agent error: {str(e)}")
@@ -258,39 +257,45 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
 
             # Count solutions that agree with each other
             solution_counts = {}
-            for agent1, sol1 in normalized_solutions.items():
-                if sol1 not in solution_counts:
-                    solution_counts[sol1] = {"count": 1, "agents": [agent1]}
+            for agent, sol in normalized_solutions.items():
+                if sol is None:
+                    continue  # Skip None values
+                if sol not in solution_counts:
+                    solution_counts[sol] = {"count": 1, "agents": [agent]}
                 else:
-                    solution_counts[sol1]["count"] += 1
-                    solution_counts[sol1]["agents"].append(agent1)
+                    solution_counts[sol]["count"] += 1
+                    solution_counts[sol]["agents"].append(agent)
 
-            # Find majority solution (if any)
+            # Find majority solution (if any) - any solution with 2+ votes
             majority_solution = None
+            majority_agents = []
+            max_count = 0
+
             for sol, data in solution_counts.items():
                 logger.info(f"agent solutions: {sol}, {data}")
-                if data["count"] >= 2:  # At least 2 out of 3 agree
+                if data["count"] >= 2 and data["count"] > max_count:  # Find the solution with the most agreement
                     majority_solution = sol
                     majority_agents = data["agents"]
-                    break
+                    max_count = data["count"]
 
-            logger.info(f"Majority solutions: {majority_solution}")
-            if majority_solution and callback_handler:
-                callback_handler.container.write(f"Majority solution found: {majority_solution}")
-                callback_handler.container.write(f"Agents that agree: {', '.join(majority_agents)}")
+            logger.info(f"Majority solution: {majority_solution}")
+            if majority_solution:
+                if callback_handler:
+                    callback_handler.container.write(f"🏛️ Tribunal solution: {majority_solution}")
+                    callback_handler.container.write(f"Agents that agree: {', '.join(majority_agents)}")
 
                 logger.info(f"Majority solution found: {majority_solution}")
                 logger.info(f"Agents that agree: {', '.join(majority_agents)}")
 
                 # Use the majority solution
                 solution = majority_solution
-                is_verified = True
-                verification_result = f"Solution verified by majority vote ({', '.join(majority_agents)})"
+                is_verified = True  # Always mark as verified when we have majority agreement
+                verification_result = f"Solution verified by tribunal vote ({', '.join(majority_agents)})"
             else:
                 # No majority - default to solver solution with verification
                 if callback_handler:
                     callback_handler.container.write(
-                        "No majority found, using Math Solver Agent solution with verification...")
+                        "No tribunal majority found, using Math Solver Agent solution with verification...")
 
                 solution = solver_solution
                 # Verify the solution from solver agent
@@ -476,6 +481,23 @@ def load_workflow_cache():
             _workflow_cache = {}
     else:
         _workflow_cache = {}
+
+
+def clear_workflow_cache():
+    """Clear the workflow cache completely."""
+    global _workflow_cache
+    _workflow_cache = {}
+    logger.info("Workflow cache cleared")
+
+    # Also try to remove the cache file if it exists
+    if os.path.exists('workflow_cache.pkl'):
+        try:
+            os.remove('workflow_cache.pkl')
+            logger.info("Removed workflow_cache.pkl file")
+        except Exception as e:
+            logger.error(f"Failed to remove workflow_cache.pkl file: {e}")
+
+    return len(_workflow_cache)
 
 
 # Initialize the cache when the module is imported

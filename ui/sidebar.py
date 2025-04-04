@@ -18,6 +18,23 @@ def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManage
     # Add toggle for tool errors
     st.sidebar.header("Settings")
 
+    # Add a button to clear the cache
+    if st.sidebar.button("Clear Solution Cache", help="Clear all cached problem solutions"):
+        from workflows.math_workflow import clear_workflow_cache
+
+        # Clear the workflow cache
+        cache_size = clear_workflow_cache()
+
+        # Clear the session state cache as well
+        if "workflow_result" in st.session_state:
+            del st.session_state.workflow_result
+
+        # Notify the user
+        st.sidebar.success("Cache cleared successfully!")
+
+        # Rerun to update the UI
+        st.rerun()
+
     # Initialize the toggle state if it doesn't exist
     if "tool_errors_enabled" not in st.session_state:
         st.session_state.tool_errors_enabled = True  # Default to having errors enabled

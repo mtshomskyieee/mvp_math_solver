@@ -11,6 +11,13 @@ logger = setup_logger("main")
 override_key = "your key here"
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY', override_key)
 
+# Create necessary files
+if not os.path.isfile('new_tools.csv'):
+    open('new_tools.csv', 'w').close()
+if not os.path.isfile('math_problems_vector_store.faiss.index'):
+    open('math_problems_vector_store.faiss.index', 'w').close()
+if not os.path.isfile('math_problems_vector_store.faiss.mappings'):
+    open('math_problems_vector_store.faiss.mappings', 'w').close()
 
 if __name__ == "__main__":
     try:

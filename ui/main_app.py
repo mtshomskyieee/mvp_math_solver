@@ -208,7 +208,7 @@ def app():
                     del st.session_state.solving_context
 
     # Create two columns for the main layout
-    left_col, right_col = st.columns([1, 1])
+    left_col, right_col = st.columns([3, 1])
 
     # Left Column - Problem Input Area
     with left_col:

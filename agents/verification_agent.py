@@ -99,7 +99,7 @@ class VerificationAgent:
                                          f"After solving, respond with only the result labeled as 'EXACT_ANSWER: ' followed by the answer."
             """
 
-            # This prompt had equations as the exact answer
+            # This prompt had equations as the exact answer, apparently less is more
             """
               "input": f"Solve this math problem precisely: {problem}. "
                              f"Use the appropriate mathematical tools and methods to derive the exact numeric answer. "

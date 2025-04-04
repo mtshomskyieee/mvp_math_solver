@@ -2,8 +2,13 @@
 
 A Streamlit application that uses multiple AI agents to solve and verify math problems.
 
-## Project Structure
+## Technologies
+- Python + Streamlit
+- Rust
+- Docker
+- Pair coded with AI (that's why there's a generate_all.sh)
 
+# Project Structure
 Core project files
 - `config/`: Configuration settings
 - `core/`: Core functionality (math toolbox, virtual tools)
@@ -72,6 +77,7 @@ This application uses a modular architecture with:
 
 ## Running using Docker
 Run the following
+- Set your OPENAI_API_KEY as an environment variable
 - `docker compose build`
 - `docker compose up`
 
@@ -102,4 +108,6 @@ To run unit tests, run the following:
 ## Class
 ![class_diagram.png](docs%2Fclass_diagram.png)
 
+# Slides
+[SpindleAI Application.pdf](docs%2FSpindleAI%20Application.pdf)
 

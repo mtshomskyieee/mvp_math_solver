@@ -1,4 +1,3 @@
-# math_solver/ui/sidebar.py
 import streamlit as st
 from core.math_toolbox import MathToolbox
 from core.virtual_tool_manager import VirtualToolManager
@@ -7,13 +6,13 @@ from core.virtual_tool_manager import VirtualToolManager
 def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManager):
     """Render the sidebar components."""
     # Sidebar info
-    #st.sidebar.header("Agents")
-    #st.sidebar.markdown("""
-    #1. Math Solver Agent - Uses tools to solve problems
-    #2. Verification Agent - Verifies solutions
-    #3. CAS Agent - Uses Computer Algebra System (SymPy)
-    #4. Virtual Tool Manager - Creates new tools from successful sequences
-    #""")
+    # st.sidebar.header("Agents")
+    # st.sidebar.markdown("""
+    # 1. Math Solver Agent - Uses tools to solve problems
+    # 2. Verification Agent - Verifies solutions
+    # 3. CAS Agent - Uses Computer Algebra System (SymPy)
+    # 4. Virtual Tool Manager - Creates new tools from successful sequences
+    # """)
 
     # Add toggle for tool errors
     st.sidebar.header("Settings")
@@ -116,6 +115,20 @@ def render_sidebar(toolbox: MathToolbox, virtual_tool_manager: VirtualToolManage
         if st.button("Save Tools to CSV"):
             virtual_tool_manager.save_virtual_tools_to_csv()
             st.success(f"Saved {len(virtual_tool_manager.virtual_tools)} virtual tools to new_tools.csv")
+
+    # Add a button to clear virtual functions
+    if st.sidebar.button("Clear Virtual Functions", help="Remove all virtual functions"):
+        # Clear all virtual functions
+        virtual_tool_manager.virtual_tools = {}
+        virtual_tool_manager.successful_sequences = {}
+        virtual_tool_manager.tool_failure_counts = {}
+
+        # Clear vector store
+        if hasattr(virtual_tool_manager, 'vector_store'):
+            virtual_tool_manager.vector_store = VirtualToolManager().vector_store
+
+        st.sidebar.success("All virtual functions have been cleared!")
+        st.rerun()  # Refresh the UI
 
     # Show virtual tools
     virtual_tools = virtual_tool_manager.virtual_tools

@@ -1,34 +1,39 @@
 flowchart TD
-    User([User]) -->|Enter math equation| UI[Streamlit UI]
-    UI -->|Submit problem| Workflow[Math Workflow]
+    A[User inputs problem] --> B{Check cache}
+    B -->|Found in cache| C[Return cached solution]
+    B -->|Not in cache| D{Check for virtual tool}
     
-    Workflow -->|Check| Cache{Cache lookup}
-    Cache -->|Hit| CachedSolution[Return cached solution]
-    Cache -->|Miss| VirtualTool{Virtual tool match?}
+    D -->|Virtual tool found| E[Solve with virtual tool]
+    D -->|No virtual tool| J[Solve with agents]
     
-    VirtualTool -->|Yes| ExecuteVT[Execute virtual tool]
-    VirtualTool -->|No| SolverAgent[Math Solver Agent]
+    E --> F{Verify solution}
+    F -->|Solution verified| G[Return verified solution]
+    F -->|Verification failed| H[Record tool failure]
+    H --> I{Max failures reached?}
+    I -->|Yes| W[Remove virtual tool]
+    I -->|No| J
     
-    SolverAgent -->|Use| Toolbox[Math Toolbox]
-    SolverAgent -->|Generate| Solution[Proposed solution]
+    J --> K[Solve with solver agent]
+    J --> L[Solve with validation agent]
+    J --> M[Solve with CAS agent]
     
-    ExecuteVT -->|Produce| VTSolution[Virtual tool solution]
+    K & L & M --> N[Perform majority voting]
+    N -->|No majority| O[Use solver's solution]
+    N -->|Majority found| P[Use majority solution]
     
-    Solution --> Verification[Verification Agent]
-    VTSolution --> Verification
+    O --> Q{Verify solution}
+    P --> Q
     
-    Verification -->|Validate| ValidCheck{Is solution valid?}
-    ValidCheck -->|Yes| RecordPattern[Record solution pattern]
-    ValidCheck -->|No, retries left| RetryAttempt[Retry solution]
-    ValidCheck -->|No, no retries| FinalAttempt[Return best attempt]
+    Q -->|Verified| R[Record successful sequence]
+    Q -->|Not verified| S{Retry limit reached?}
     
-    RetryAttempt --> SolverAgent
+    S -->|Yes| T[Return unverified solution]
+    S -->|No| U[Retry with different approach]
+    U --> K
     
-    RecordPattern -->|Create/update| CreateVT[Virtual Tool Manager]
-    RecordPattern -->|Store in| UpdateCache[Cache]
+    R --> V[Create virtual tool]
+    V --> G
     
-    CachedSolution --> DisplayResult[Display result to user]
-    RecordPattern --> DisplayResult
-    FinalAttempt --> DisplayResult
-    
-    DisplayResult --> User
+    G --> X[Cache result]
+    X --> Y[Return final solution to user]
+    T --> Y

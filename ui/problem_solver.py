@@ -189,6 +189,8 @@ def display_agent_comparison(result):
             df = pd.DataFrame(agent_data)
             st.table(df)
 
+# In ui/problem_solver.py, update the display_solution_results function
+
 def display_solution_results():
     """Display solution results if available."""
     if st.session_state.get("workflow_result"):
@@ -197,7 +199,11 @@ def display_solution_results():
 
         with solution_container:
             st.markdown("### Solution")
-            st.write(result["solution"])
+            # Check if this was a tribunal decision
+            if "tribunal" in result.get("verification_result", "").lower():
+                st.markdown(f"🏛️ **Tribunal solution**: {result['solution']}")
+            else:
+                st.write(result["solution"])
 
             st.markdown("### Verification")
             if result["is_verified"]:

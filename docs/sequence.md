@@ -1,69 +1,47 @@
 sequenceDiagram
-    actor User
-    participant Workflow
-    participant VTManager as VirtualToolManager
-    participant Solver as SolverAgent
-    participant Verifier as VerificationAgent
-    participant Tools as MathToolbox
-
-    User->>Workflow: Enter math equation
-    Workflow->>Workflow: Check cache
+    participant User
+    participant MainApp
+    participant MathWorkflow
+    participant MathSolverAgent
+    participant VirtualToolManager
+    participant VerificationAgent
+    participant CASAgent
+    participant MathToolbox
     
-    alt Found in cache
-        Workflow-->>User: Return cached solution
-    else Not in cache
-        Workflow->>VTManager: Find matching virtual tool
+    User->>MainApp: Enter math problem
+    MainApp->>MathWorkflow: math_workflow(problem)
+    
+    MathWorkflow->>VirtualToolManager: find_matching_virtual_tool(problem)
+    
+    alt Virtual Tool Found
+        VirtualToolManager-->>MathWorkflow: Return matching virtual tool
+        MathWorkflow->>MathToolbox: Execute virtual tool function
+        MathToolbox-->>MathWorkflow: Return solution
+        MathWorkflow->>VerificationAgent: verify_result(problem, solution)
         
-        alt Virtual tool exists
-            VTManager-->>Workflow: Return virtual tool
-            Workflow->>Tools: Execute virtual tool
-            Tools-->>Workflow: Result
-            Workflow->>Verifier: Verify result
-            
-            alt Verification successful
-                Verifier-->>Workflow: Result verified
-                Workflow-->>User: Display verified solution
-            else Verification failed
-                Verifier-->>Workflow: Verification failed
-                Workflow->>VTManager: Record tool failure
-                Workflow->>Solver: Fallback to standard solving
-            end
-        else No virtual tool
-            VTManager-->>Workflow: No tool found
-            Workflow->>Solver: Solve problem
+        alt Verification Success
+            VerificationAgent-->>MathWorkflow: Return verified=true
+        else Verification Failure
+            VerificationAgent-->>MathWorkflow: Return verified=false
+            VirtualToolManager->>VirtualToolManager: record_tool_failure(problem_hash)
+            MathWorkflow->>MathSolverAgent: solve_problem(problem)
         end
+    else No Virtual Tool
+        MathWorkflow->>MathSolverAgent: solve_problem(problem)
+        MathSolverAgent->>MathToolbox: Use math tools (sum, product, etc.)
+        MathToolbox-->>MathSolverAgent: Return tool results
+        MathSolverAgent-->>MathWorkflow: Return solution
         
-        Solver->>Tools: Use math tools
-        Tools-->>Solver: Tool results
-        Solver-->>Workflow: Solution
+        MathWorkflow->>VerificationAgent: verify_result(problem, solution)
+        MathWorkflow->>CASAgent: solve_problem(problem)
+        CASAgent-->>MathWorkflow: Return CAS solution
         
-        Workflow->>Verifier: Verify solution
+        MathWorkflow->>MathWorkflow: Perform majority voting on solutions
         
-        alt Verification successful
-            Verifier-->>Workflow: Solution verified
-            Workflow->>VTManager: Record successful sequence
-            Workflow->>Workflow: Cache result
-            Workflow-->>User: Display verified solution
-        else Verification failed
-            Verifier-->>Workflow: Verification failed
-            
-            loop Until MAX_RETRIES or success
-                Workflow->>Solver: Retry solving
-                Solver->>Tools: Use math tools
-                Tools-->>Solver: Tool results
-                Solver-->>Workflow: New solution
-                
-                Workflow->>Verifier: Verify new solution
-                
-                alt Verification successful
-                    Verifier-->>Workflow: Solution verified
-                    Workflow->>VTManager: Record successful sequence
-                    Workflow->>Workflow: Cache result
-                    Workflow-->>User: Display verified solution
-                    note over Workflow: Exit retry loop
-                end
-            end
-            
-            Workflow-->>User: Display best attempt
-        end
+        MathWorkflow->>VirtualToolManager: record_successful_sequence(problem, sequence, result)
+        VirtualToolManager->>VirtualToolManager: _create_virtual_tool(problem_hash)
+        VirtualToolManager->>MathProblemVectorStore: add_problem(problem, problem_hash, sequence)
     end
+    
+    MathWorkflow-->>MainApp: Return final solution and verification status
+    MainApp-->>User: Display solution

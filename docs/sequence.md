@@ -1,47 +1,49 @@
 sequenceDiagram
     participant User
-    participant MainApp
-    participant MathWorkflow
-    participant MathSolverAgent
-    participant VirtualToolManager
+    participant App as Main App
+    participant Workflow as Math Workflow
+    participant SolverAgent as Math Solver Agent
     participant VerificationAgent
     participant CASAgent
-    participant MathToolbox
+    participant VTM as Virtual Tool Manager
+    participant MT as Math Toolbox
+    participant VS as Vector Store
+
+    User->>App: Enter math problem
+    App->>Workflow: Solve problem
     
-    User->>MainApp: Enter math problem
-    MainApp->>MathWorkflow: math_workflow(problem)
+    Workflow->>VTM: Check for virtual tool
+    VTM->>VS: Find similar problems
+    VS-->>VTM: Return matching tools
     
-    MathWorkflow->>VirtualToolManager: find_matching_virtual_tool(problem)
-    
-    alt Virtual Tool Found
-        VirtualToolManager-->>MathWorkflow: Return matching virtual tool
-        MathWorkflow->>MathToolbox: Execute virtual tool function
-        MathToolbox-->>MathWorkflow: Return solution
-        MathWorkflow->>VerificationAgent: verify_result(problem, solution)
+    alt Virtual tool found
+        VTM-->>Workflow: Return virtual tool
+        Workflow->>MT: Execute virtual tool function
+        MT-->>Workflow: Return result
+        Workflow->>VerificationAgent: Verify result
+        VerificationAgent-->>Workflow: Verification result
+    else No virtual tool found
+        Workflow->>SolverAgent: Solve problem
+        SolverAgent->>MT: Use math tools
+        MT-->>SolverAgent: Tool results
+        SolverAgent-->>Workflow: Solver solution
         
-        alt Verification Success
-            VerificationAgent-->>MathWorkflow: Return verified=true
-        else Verification Failure
-            VerificationAgent-->>MathWorkflow: Return verified=false
-            VirtualToolManager->>VirtualToolManager: record_tool_failure(problem_hash)
-            MathWorkflow->>MathSolverAgent: solve_problem(problem)
+        Workflow->>VerificationAgent: Get solution
+        VerificationAgent-->>Workflow: Validation solution
+        
+        Workflow->>CASAgent: Solve problem
+        CASAgent-->>Workflow: CAS solution
+        
+        Workflow->>Workflow: Perform majority voting
+        
+        Workflow->>VerificationAgent: Verify final solution
+        VerificationAgent-->>Workflow: Verification result
+        
+        alt Solution verified
+            Workflow->>VTM: Record successful sequence
+            VTM->>VS: Add problem to vector store
         end
-    else No Virtual Tool
-        MathWorkflow->>MathSolverAgent: solve_problem(problem)
-        MathSolverAgent->>MathToolbox: Use math tools (sum, product, etc.)
-        MathToolbox-->>MathSolverAgent: Return tool results
-        MathSolverAgent-->>MathWorkflow: Return solution
-        
-        MathWorkflow->>VerificationAgent: verify_result(problem, solution)
-        MathWorkflow->>CASAgent: solve_problem(problem)
-        CASAgent-->>MathWorkflow: Return CAS solution
-        
-        MathWorkflow->>MathWorkflow: Perform majority voting on solutions
-        
-        MathWorkflow->>VirtualToolManager: record_successful_sequence(problem, sequence, result)
-        VirtualToolManager->>VirtualToolManager: _create_virtual_tool(problem_hash)
-        VirtualToolManager->>MathProblemVectorStore: add_problem(problem, problem_hash, sequence)
     end
     
-    MathWorkflow-->>MainApp: Return final solution and verification status
-    MainApp-->>User: Display solution
+    Workflow-->>App: Return final solution
+    App-->>User: Display solution

@@ -1,0 +1,3402 @@
+problem_text,output,virtual_tool_as_string
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:11.419839
+    # Sequence: modulo('5, 2')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:19.451931
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:58:19.452005
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:26.892614
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:58:26.892781
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:58:26.892852
+    # Sequence: sqrt('-1')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:58:32.107968
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:58:32.108155
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:58:32.108212
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:58:32.108258
+    # Sequence: sum('25, 37')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:02.583781
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:02.584016
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:02.584117
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:02.584206
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:02.584286
+    # Sequence: product('13, 7')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:11.694291
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:11.694451
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:11.694503
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:11.694550
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:11.694593
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:11.694636
+    # Sequence: divide('144, 12')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:18.285885
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:18.286048
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:18.286100
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:18.286145
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:18.286186
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:18.286227
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:18.286311
+    # Sequence: sqrt('81')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:26.320126
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:26.320289
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:26.320346
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:26.320399
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:26.320440
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:26.320483
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:26.320526
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T16:59:26.320569
+    # Sequence: power('5, 3')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:43.501737
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:43.501840
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:43.501870
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:43.501893
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:43.501915
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:43.501937
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:43.501959
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T16:59:43.501981
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-02T16:59:43.502016
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T16:59:56.539618
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T16:59:56.539636
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T16:59:56.539644
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T16:59:56.539651
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T16:59:56.539657
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T16:59:56.539663
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T16:59:56.539669
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T16:59:56.539676
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-02T16:59:56.539683
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-02T17:00:13.545930
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-02T17:00:13.546109
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-02T17:00:13.546163
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-02T17:00:13.546211
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-02T17:00:13.546294
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-02T17:00:13.546338
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-02T17:00:13.546383
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-02T17:00:13.546427
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-02T17:00:13.546474
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-03T20:00:14.749960
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T20:00:14.750084
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-03T20:00:14.750116
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T20:00:14.750152
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T20:00:14.750182
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T20:00:14.750215
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T20:00:14.750247
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T20:00:14.750452
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T20:00:14.750604
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T20:00:14.750682
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of -10000,The square root of -10000 is 100.0i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -10000'
+    # Created: 2025-04-03T20:02:05.920482
+    # Sequence: sqrt('-10000')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T20:12:23.972957
+    # Sequence: sqrt('10')
+    #
+    "
+What is the square root of -100,The square root of -100 is 10.0i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -100'
+    # Created: 2025-04-03T20:17:31.190405
+    # Sequence: sqrt('-100')
+    #
+    "
+What is the square root of -100,The square root of -100 is 10.0i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -100'
+    # Created: 2025-04-03T20:18:53.590686
+    # Sequence: sqrt('-100')
+    #
+    "
+(4 mod 2),The result of (4 mod 2) is 0.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(4 mod 2)'
+    # Created: 2025-04-03T20:18:53.590704
+    # Sequence: modulo('4, 2')
+    #
+    "
+What is the square root of -100,The square root of -100 is 10.0i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -100'
+    # Created: 2025-04-03T20:19:24.527184
+    # Sequence: sqrt('-100')
+    #
+    "
+(4 mod 2),The result of (4 mod 2) is 0.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(4 mod 2)'
+    # Created: 2025-04-03T20:19:24.527262
+    # Sequence: modulo('4, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T20:19:24.527295
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T20:19:24.527325
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T20:19:24.527354
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T20:19:24.527384
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T20:19:24.527413
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T20:19:24.527442
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T20:19:24.527476
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T20:19:24.527505
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T20:19:24.527533
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T20:19:24.527561
+    # Sequence: product('10, 8')
+    #
+    "
+What is the square root of -100,The square root of -100 is 10.0i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -100'
+    # Created: 2025-04-03T20:19:38.285499
+    # Sequence: sqrt('-100')
+    #
+    "
+(4 mod 2),The result of (4 mod 2) is 0.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(4 mod 2)'
+    # Created: 2025-04-03T20:19:38.285571
+    # Sequence: modulo('4, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T20:19:38.285604
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T20:19:38.285635
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T20:19:38.285654
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T20:19:38.285673
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T20:19:38.285691
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T20:19:38.285709
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T20:19:38.285729
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T20:19:38.285748
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T20:19:38.285763
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T20:19:38.285781
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-03T20:19:38.285799
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+What is the square root of -100,The square root of -100 is 10.0i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -100'
+    # Created: 2025-04-03T20:20:41.202794
+    # Sequence: sqrt('-100')
+    #
+    "
+(4 mod 2),The result of (4 mod 2) is 0.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(4 mod 2)'
+    # Created: 2025-04-03T20:20:41.202961
+    # Sequence: modulo('4, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T20:20:41.203042
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T20:20:41.203122
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T20:20:41.203189
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T20:20:41.203264
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T20:20:41.203340
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T20:20:41.203420
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T20:20:41.203502
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T20:20:41.203578
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T20:20:41.203636
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T20:20:41.203708
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-03T20:20:41.203778
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-03T20:20:41.203857
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:07:20.963780
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:08:00.058051
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:08:00.058164
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:08:27.836490
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:08:27.836606
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:08:27.836646
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:12:19.847278
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:12:19.847311
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:12:19.847321
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-03T22:12:19.847328
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-03T22:15:24.374198
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T22:15:24.374349
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-03T22:15:24.374393
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T22:15:24.374419
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T22:15:24.374442
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T22:15:24.374465
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T22:15:24.374487
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T22:15:24.374509
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T22:15:24.374534
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T22:15:24.374557
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T22:15:24.374577
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T22:15:24.374600
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-03T22:15:24.374620
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-03T22:15:24.374642
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:15:24.374665
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:15:24.374686
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:15:24.374711
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-03T22:15:24.374734
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 500 + 100 + 245,"The sum of 300, 300, 500, 100, and 245 is 1445.","
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 500 + 100 + 245'
+    # Created: 2025-04-03T22:21:49.535917
+    # Sequence: sum('300, 300, 500, 100, 245')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-03T22:34:03.188297
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T22:34:03.188477
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-03T22:34:03.188532
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T22:34:03.188580
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T22:34:03.188623
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T22:34:03.188665
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T22:34:03.188708
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T22:34:03.188751
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T22:34:03.188800
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T22:34:03.188848
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T22:34:03.188890
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T22:34:03.188933
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-03T22:34:03.188973
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-03T22:34:03.189015
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:34:03.189059
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:34:03.189102
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:34:03.189151
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-03T22:34:03.189194
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-03T22:34:03.189241
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-03T22:34:36.700957
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T22:34:36.701090
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-03T22:34:36.701129
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T22:34:36.701165
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T22:34:36.701197
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T22:34:36.701228
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T22:34:36.701260
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T22:34:36.701291
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T22:34:36.701326
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T22:34:36.701360
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T22:34:36.701388
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T22:34:36.701420
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-03T22:34:36.701448
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-03T22:34:36.701478
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:34:36.701509
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:34:36.701541
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+100 + 100 + 300 + 500 + 100 ,The sum of 100 + 100 + 300 + 500 + 100 is 1100.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '100 + 100 + 300 + 500 + 100 '
+    # Created: 2025-04-03T22:34:36.701576
+    # Sequence: sum('100, 100, 300, 500, 100')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-03T22:34:36.701607
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-03T22:34:36.701640
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-03T22:35:16.861103
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T22:35:16.861222
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-03T22:35:16.861253
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T22:35:16.861280
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T22:35:16.861304
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T22:35:16.861327
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T22:35:16.861349
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T22:35:16.861371
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T22:35:16.861398
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T22:35:16.861423
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T22:35:16.861443
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T22:35:16.861466
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-03T22:35:16.861487
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-03T22:35:16.861509
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:35:16.861538
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:35:16.861562
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+100 + 100 + 300 + 500 + 100 ,The sum of 100 + 100 + 300 + 500 + 100 is 1100.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '100 + 100 + 300 + 500 + 100 '
+    # Created: 2025-04-03T22:35:16.861590
+    # Sequence: sum('100, 100, 300, 500, 100')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-03T22:35:16.861615
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-03T22:35:16.861641
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-03T22:35:16.861669
+    # Sequence: power('1000, 0.5')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-03T22:38:21.544459
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-03T22:38:21.544480
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-03T22:38:21.544488
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-03T22:38:21.544495
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-03T22:38:21.544501
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-03T22:38:21.544508
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-03T22:38:21.544514
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-03T22:38:21.544520
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-03T22:38:21.544527
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-03T22:38:21.544534
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-03T22:38:21.544539
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-03T22:38:21.544545
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-03T22:38:21.544551
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-03T22:38:21.544558
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-03T22:38:21.544565
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:38:21.544572
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-03T22:38:21.544579
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-03T22:38:21.544586
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-03T22:38:21.544592
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-03T22:38:21.544599
+    # Sequence: power('1000, 0.5')
+    #
+    "
+300 + 500 + 11000 + 350 / 100,The result of the expression 300 + 500 + 11000 + 350 / 100 is 11803.5.,"
+    # Virtual Tool: VirtualTool_General_f4fcaff5
+    # Description: Solves General problems similar to: '300 + 500 + 11000 + 350 / 100'
+    # Created: 2025-04-03T22:38:21.544606
+    # Sequence: divide('350, 100') -> sum('300, 500, 11000, 3.5')
+    #
+    "
+200 + 800 + 900,"The sum of 200, 800, and 900 is 1900.","
+    # Virtual Tool: VirtualTool_General_da4cbfc3
+    # Description: Solves General problems similar to: '200 + 800 + 900'
+    # Created: 2025-04-03T22:39:18.588345
+    # Sequence: sum('200, 800, 900')
+    #
+    "
+100 + 100 + 100 + 100,The sum of 100 + 100 + 100 + 100 is 400.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100'
+    # Created: 2025-04-03T22:40:25.887429
+    # Sequence: sum('100, 100, 100, 100')
+    #
+    "
+100 + 100 + 100 + 100,The sum of 100 + 100 + 100 + 100 is 400.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100'
+    # Created: 2025-04-03T22:41:11.514824
+    # Sequence: sum('100, 100, 100, 100')
+    #
+    "
+100 + 100 + 100 + 100i + 100 + 100,500 + 100i,"
+    # Virtual Tool: VirtualTool_General_7bdb8db2
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100i + 100 + 100'
+    # Created: 2025-04-03T22:41:11.514848
+    # Sequence: sum('100, 100, 100, 100, 100') -> sum('100, 100, 100, 100, 100')
+    #
+    "
+500 + 500 + 500 + 300  + 500,The sum of 500 + 500 + 500 + 300 + 500 is 2300.,"
+    # Virtual Tool: VirtualTool_General_15f2014f
+    # Description: Solves General problems similar to: '500 + 500 + 500 + 300  + 500'
+    # Created: 2025-04-03T22:54:17.653925
+    # Sequence: sum('500, 500, 500, 300, 500')
+    #
+    "
+200 + 300 + 500 + 600,"The sum of 200, 300, 500, and 600 is 1600.","
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '200 + 300 + 500 + 600'
+    # Created: 2025-04-03T23:06:14.174055
+    # Sequence: sum('200, 300, 500, 600') -> sum('200, 300, 500, 600')
+    #
+    "
+700 + 20 + 100 + 40 + 300 ,"The sum of 700, 20, 100, 40, and 300 is 1160.","
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '700 + 20 + 100 + 40 + 300 '
+    # Created: 2025-04-03T23:08:19.214455
+    # Sequence: sum('700, 20, 100, 40, 300')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:35:30.622977
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:36:13.640318
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 22 + 342+ 22?,"The sum of 22, 342, and 22 is 386.","
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 22 + 342+ 22?'
+    # Created: 2025-04-04T04:36:13.640451
+    # Sequence: sum('22, 342, 22') -> sum('22, 342, 22')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:37:37.896285
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 22 + 22+ 22?,The sum of 22 + 22 + 22 is 66.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 22 + 22+ 22?'
+    # Created: 2025-04-04T04:37:37.896399
+    # Sequence: sum('22, 22, 22')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:38:05.527906
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 22 + 44+ 22?,"The sum of 22, 44, and 22 is 88.","
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 22 + 44+ 22?'
+    # Created: 2025-04-04T04:38:05.528138
+    # Sequence: sum('22, 44, 22')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:38:19.800616
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:38:19.800836
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:38:33.302221
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:38:33.302247
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:38:55.666018
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:38:55.666320
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:39:56.399655
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:39:56.399876
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:39:56.399934
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-04T04:39:56.399982
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:39:56.400026
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:39:56.400071
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:39:56.400114
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:39:56.400157
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:39:56.400202
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T04:39:56.400245
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T04:39:56.400306
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-04T04:39:56.400352
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-04T04:39:56.400392
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-04T04:39:56.400435
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10,The result of 10 * 8 * 10 is 800.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 8 * 10'
+    # Created: 2025-04-04T04:39:56.400475
+    # Sequence: product('10, 8, 10') -> product('10, 8, 10')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-04T04:39:56.400522
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-04T04:39:56.400566
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:39:56.400612
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:39:56.400662
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-04T04:39:56.400705
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-04T04:39:56.400752
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-04T04:39:56.400801
+    # Sequence: power('1000, 0.5')
+    #
+    "
+300 + 500 + 11000 + 350 / 100,The result of the expression 300 + 500 + 11000 + 350 / 100 is 11803.5.,"
+    # Virtual Tool: VirtualTool_General_f4fcaff5
+    # Description: Solves General problems similar to: '300 + 500 + 11000 + 350 / 100'
+    # Created: 2025-04-04T04:39:56.400843
+    # Sequence: divide('350, 100') -> sum('300, 500, 11000, 3.5')
+    #
+    "
+200 + 800 + 900,"The sum of 200, 800, and 900 is 1900.","
+    # Virtual Tool: VirtualTool_General_da4cbfc3
+    # Description: Solves General problems similar to: '200 + 800 + 900'
+    # Created: 2025-04-04T04:39:56.400892
+    # Sequence: sum('200, 800, 900')
+    #
+    "
+100 + 100 + 100 + 100i + 100 + 100,500 + 100i,"
+    # Virtual Tool: VirtualTool_General_7bdb8db2
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100i + 100 + 100'
+    # Created: 2025-04-04T04:39:56.400933
+    # Sequence: sum('100, 100, 100, 100, 100') -> sum('100, 100, 100, 100, 100')
+    #
+    "
+500 + 500 + 500 + 300  + 500,The sum of 500 + 500 + 500 + 300 + 500 is 2300.,"
+    # Virtual Tool: VirtualTool_General_15f2014f
+    # Description: Solves General problems similar to: '500 + 500 + 500 + 300  + 500'
+    # Created: 2025-04-04T04:39:56.400980
+    # Sequence: sum('500, 500, 500, 300, 500')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:42:37.548737
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:42:37.548772
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:42:37.548787
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-04T04:42:37.548799
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:42:37.548811
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:42:37.548822
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:42:37.548834
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:42:37.548845
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:42:37.548856
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T04:42:37.548867
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T04:42:37.548880
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-04T04:42:37.548891
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-04T04:42:37.548901
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-04T04:42:37.548912
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-04T04:42:37.548922
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-04T04:42:37.548934
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:42:37.548945
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:42:37.548958
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-04T04:42:37.548969
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-04T04:42:37.548981
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-04T04:42:37.548993
+    # Sequence: power('1000, 0.5')
+    #
+    "
+300 + 500 + 11000 + 350 / 100,The result of the expression 300 + 500 + 11000 + 350 / 100 is 11803.5.,"
+    # Virtual Tool: VirtualTool_General_f4fcaff5
+    # Description: Solves General problems similar to: '300 + 500 + 11000 + 350 / 100'
+    # Created: 2025-04-04T04:42:37.549005
+    # Sequence: divide('350, 100') -> sum('300, 500, 11000, 3.5')
+    #
+    "
+200 + 800 + 900,"The sum of 200, 800, and 900 is 1900.","
+    # Virtual Tool: VirtualTool_General_da4cbfc3
+    # Description: Solves General problems similar to: '200 + 800 + 900'
+    # Created: 2025-04-04T04:42:37.549017
+    # Sequence: sum('200, 800, 900')
+    #
+    "
+100 + 100 + 100 + 100i + 100 + 100,500 + 100i,"
+    # Virtual Tool: VirtualTool_General_7bdb8db2
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100i + 100 + 100'
+    # Created: 2025-04-04T04:42:37.549027
+    # Sequence: sum('100, 100, 100, 100, 100') -> sum('100, 100, 100, 100, 100')
+    #
+    "
+500 + 500 + 500 + 300  + 500,The sum of 500 + 500 + 500 + 300 + 500 is 2300.,"
+    # Virtual Tool: VirtualTool_General_15f2014f
+    # Description: Solves General problems similar to: '500 + 500 + 500 + 300  + 500'
+    # Created: 2025-04-04T04:42:37.549039
+    # Sequence: sum('500, 500, 500, 300, 500')
+    #
+    "
+12 * 5 * 7,The result of 12 * 5 * 7 is 420.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '12 * 5 * 7'
+    # Created: 2025-04-04T04:42:37.549051
+    # Sequence: product('12, 5, 7')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:42:55.104777
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:42:55.104986
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:42:55.105073
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-04T04:42:55.105143
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:42:55.105209
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:42:55.105278
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:42:55.105344
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:42:55.105457
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:42:55.105531
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T04:42:55.105599
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T04:42:55.105679
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-04T04:42:55.105750
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-04T04:42:55.105818
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-04T04:42:55.105899
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-04T04:42:55.105972
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-04T04:42:55.106369
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:42:55.106557
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:42:55.106674
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-04T04:42:55.106775
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-04T04:42:55.106876
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-04T04:42:55.106979
+    # Sequence: power('1000, 0.5')
+    #
+    "
+300 + 500 + 11000 + 350 / 100,The result of the expression 300 + 500 + 11000 + 350 / 100 is 11803.5.,"
+    # Virtual Tool: VirtualTool_General_f4fcaff5
+    # Description: Solves General problems similar to: '300 + 500 + 11000 + 350 / 100'
+    # Created: 2025-04-04T04:42:55.107068
+    # Sequence: divide('350, 100') -> sum('300, 500, 11000, 3.5')
+    #
+    "
+200 + 800 + 900,"The sum of 200, 800, and 900 is 1900.","
+    # Virtual Tool: VirtualTool_General_da4cbfc3
+    # Description: Solves General problems similar to: '200 + 800 + 900'
+    # Created: 2025-04-04T04:42:55.107170
+    # Sequence: sum('200, 800, 900')
+    #
+    "
+100 + 100 + 100 + 100i + 100 + 100,500 + 100i,"
+    # Virtual Tool: VirtualTool_General_7bdb8db2
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100i + 100 + 100'
+    # Created: 2025-04-04T04:42:55.107260
+    # Sequence: sum('100, 100, 100, 100, 100') -> sum('100, 100, 100, 100, 100')
+    #
+    "
+500 + 500 + 500 + 300  + 500,The sum of 500 + 500 + 500 + 300 + 500 is 2300.,"
+    # Virtual Tool: VirtualTool_General_15f2014f
+    # Description: Solves General problems similar to: '500 + 500 + 500 + 300  + 500'
+    # Created: 2025-04-04T04:42:55.107358
+    # Sequence: sum('500, 500, 500, 300, 500')
+    #
+    "
+12 * 5 * 9,The result of 12 * 5 * 9 is 540.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '12 * 5 * 9'
+    # Created: 2025-04-04T04:42:55.107454
+    # Sequence: product('12, 5, 9')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:43:08.975371
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:43:08.975510
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:43:08.975555
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-04T04:43:08.975603
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:43:08.975648
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:43:08.975693
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:43:08.975737
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:43:08.975780
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:43:08.975826
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T04:43:08.975871
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T04:43:08.975920
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-04T04:43:08.975964
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-04T04:43:08.976004
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-04T04:43:08.976046
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-04T04:43:08.976086
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-04T04:43:08.976132
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:43:08.976175
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:43:08.976227
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-04T04:43:08.976272
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-04T04:43:08.976318
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-04T04:43:08.976367
+    # Sequence: power('1000, 0.5')
+    #
+    "
+300 + 500 + 11000 + 350 / 100,The result of the expression 300 + 500 + 11000 + 350 / 100 is 11803.5.,"
+    # Virtual Tool: VirtualTool_General_f4fcaff5
+    # Description: Solves General problems similar to: '300 + 500 + 11000 + 350 / 100'
+    # Created: 2025-04-04T04:43:08.976409
+    # Sequence: divide('350, 100') -> sum('300, 500, 11000, 3.5')
+    #
+    "
+200 + 800 + 900,"The sum of 200, 800, and 900 is 1900.","
+    # Virtual Tool: VirtualTool_General_da4cbfc3
+    # Description: Solves General problems similar to: '200 + 800 + 900'
+    # Created: 2025-04-04T04:43:08.976457
+    # Sequence: sum('200, 800, 900')
+    #
+    "
+100 + 100 + 100 + 100i + 100 + 100,500 + 100i,"
+    # Virtual Tool: VirtualTool_General_7bdb8db2
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100i + 100 + 100'
+    # Created: 2025-04-04T04:43:08.976498
+    # Sequence: sum('100, 100, 100, 100, 100') -> sum('100, 100, 100, 100, 100')
+    #
+    "
+500 + 500 + 500 + 300  + 500,The sum of 500 + 500 + 500 + 300 + 500 is 2300.,"
+    # Virtual Tool: VirtualTool_General_15f2014f
+    # Description: Solves General problems similar to: '500 + 500 + 500 + 300  + 500'
+    # Created: 2025-04-04T04:43:08.976545
+    # Sequence: sum('500, 500, 500, 300, 500')
+    #
+    "
+12 * 5 * 10,The result of 12 * 5 * 10 is 600.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '12 * 5 * 10'
+    # Created: 2025-04-04T04:43:08.976590
+    # Sequence: product('12, 5, 10')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:43:29.246537
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:43:29.246622
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:43:29.246648
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-04T04:43:29.246669
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:43:29.246689
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:43:29.246709
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:43:29.246728
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:43:29.246747
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:43:29.246767
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T04:43:29.246786
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T04:43:29.246808
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-04T04:43:29.246827
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-04T04:43:29.246844
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-04T04:43:29.246863
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-04T04:43:29.246881
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-04T04:43:29.246901
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:43:29.246921
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:43:29.246942
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-04T04:43:29.246962
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-04T04:43:29.246982
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-04T04:43:29.247004
+    # Sequence: power('1000, 0.5')
+    #
+    "
+300 + 500 + 11000 + 350 / 100,The result of the expression 300 + 500 + 11000 + 350 / 100 is 11803.5.,"
+    # Virtual Tool: VirtualTool_General_f4fcaff5
+    # Description: Solves General problems similar to: '300 + 500 + 11000 + 350 / 100'
+    # Created: 2025-04-04T04:43:29.247022
+    # Sequence: divide('350, 100') -> sum('300, 500, 11000, 3.5')
+    #
+    "
+200 + 800 + 900,"The sum of 200, 800, and 900 is 1900.","
+    # Virtual Tool: VirtualTool_General_da4cbfc3
+    # Description: Solves General problems similar to: '200 + 800 + 900'
+    # Created: 2025-04-04T04:43:29.247043
+    # Sequence: sum('200, 800, 900')
+    #
+    "
+100 + 100 + 100 + 100i + 100 + 100,500 + 100i,"
+    # Virtual Tool: VirtualTool_General_7bdb8db2
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100i + 100 + 100'
+    # Created: 2025-04-04T04:43:29.247064
+    # Sequence: sum('100, 100, 100, 100, 100') -> sum('100, 100, 100, 100, 100')
+    #
+    "
+500 + 500 + 500 + 300  + 500,The sum of 500 + 500 + 500 + 300 + 500 is 2300.,"
+    # Virtual Tool: VirtualTool_General_15f2014f
+    # Description: Solves General problems similar to: '500 + 500 + 500 + 300  + 500'
+    # Created: 2025-04-04T04:43:29.247087
+    # Sequence: sum('500, 500, 500, 300, 500')
+    #
+    "
+10 * 5 * 10,The result of 10 * 5 * 10 is 500.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 5 * 10'
+    # Created: 2025-04-04T04:43:29.247108
+    # Sequence: product('10, 5, 10')
+    #
+    "
+What is 34 + 34 + 34?,The sum of 34 + 34 + 34 is 102.,"
+    # Virtual Tool: VirtualTool_General_27e60023
+    # Description: Solves General problems similar to: 'What is 34 + 34 + 34?'
+    # Created: 2025-04-04T04:43:53.271301
+    # Sequence: sum('34, 34, 34')
+    #
+    "
+What is 44 + 44+ 22?,The sum of 44 + 44 + 22 is 110.,"
+    # Virtual Tool: VirtualTool_General_66411f18
+    # Description: Solves General problems similar to: 'What is 44 + 44+ 22?'
+    # Created: 2025-04-04T04:43:53.271451
+    # Sequence: sum('44, 44, 22') -> sum('44, 44, 22')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:43:53.271511
+    # Sequence: modulo('5, 2')
+    #
+    "
+round 1.578,The rounded value of 1.578 is 2.,"
+    # Virtual Tool: VirtualTool_General_0addb5c7
+    # Description: Solves General problems similar to: 'round 1.578'
+    # Created: 2025-04-04T04:43:53.271560
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:43:53.271605
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:43:53.271649
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:43:53.271692
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:43:53.271735
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:43:53.271779
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T04:43:53.271823
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T04:43:53.271872
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+what is 31 * 31,31 * 31 = 961,"
+    # Virtual Tool: VirtualTool_General_bef0e33e
+    # Description: Solves General problems similar to: 'what is 31 * 31'
+    # Created: 2025-04-04T04:43:53.271916
+    # Sequence: product('31, 31')
+    #
+    "
+What is the square root of 10,The square root of 10 is approximately 3.1623.,"
+    # Virtual Tool: VirtualTool_Exponentiation_0a1d7b23
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 10'
+    # Created: 2025-04-04T04:43:53.271956
+    # Sequence: sqrt('10')
+    #
+    "
+10 * 8,The result of 10 * 8 is 80.,"
+    # Virtual Tool: VirtualTool_General_80d7d14b
+    # Description: Solves General problems similar to: '10 * 8'
+    # Created: 2025-04-04T04:43:53.271998
+    # Sequence: product('10, 8')
+    #
+    "
+10 * 8 * 10 * 10 * 10,The result of 10 * 8 * 10 * 10 * 10 is 80000.,"
+    # Virtual Tool: VirtualTool_General_12fcf9e2
+    # Description: Solves General problems similar to: '10 * 8 * 10 * 10 * 10'
+    # Created: 2025-04-04T04:43:53.272039
+    # Sequence: product('10, 8, 10, 10, 10')
+    #
+    "
+round 1.5666666 to 2 decimals,1.57,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.5666666 to 2 decimals'
+    # Created: 2025-04-04T04:43:53.272084
+    # Sequence: round_number('1.5666666, 2')
+    #
+    "
+300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 is 1200.,"
+    # Virtual Tool: VirtualTool_General_01331eaf
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:43:53.272128
+    # Sequence: sum('300, 300, 300, 300') -> sum('300, 300, 300, 300') -> sum('300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300,The sum of 300 + 300 + 300 + 300 + 300 is 1500.,"
+    # Virtual Tool: VirtualTool_General_5510f0e4
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300'
+    # Created: 2025-04-04T04:43:53.272178
+    # Sequence: sum('300, 300, 300, 300, 300')
+    #
+    "
+300 + 300 + 300 + 300 + 300+ 300,The sum of 300 + 300 + 300 + 300 + 300 + 300 is 1800.,"
+    # Virtual Tool: VirtualTool_General_0fbfb250
+    # Description: Solves General problems similar to: '300 + 300 + 300 + 300 + 300+ 300'
+    # Created: 2025-04-04T04:43:53.272223
+    # Sequence: sum('300, 300, 300, 300, 300, 300')
+    #
+    "
+"round 1.57878354345  to the 6th decimal place
+",The number 1.57878354345 rounded to the 6th decimal place is 1.578784.,"
+    # Virtual Tool: VirtualTool_General_9d640d8e
+    # Description: Solves General problems similar to: 'round 1.57878354345  to the 6th decimal place
+'
+    # Created: 2025-04-04T04:43:53.272270
+    # Sequence: round_number('1.57878354345, 6')
+    #
+    "
+(1000)^0.5,The square root of 1000 is approximately 31.62.,"
+    # Virtual Tool: VirtualTool_General_227f51bb
+    # Description: Solves General problems similar to: '(1000)^0.5'
+    # Created: 2025-04-04T04:43:53.272319
+    # Sequence: power('1000, 0.5')
+    #
+    "
+300 + 500 + 11000 + 350 / 100,The result of the expression 300 + 500 + 11000 + 350 / 100 is 11803.5.,"
+    # Virtual Tool: VirtualTool_General_f4fcaff5
+    # Description: Solves General problems similar to: '300 + 500 + 11000 + 350 / 100'
+    # Created: 2025-04-04T04:43:53.272361
+    # Sequence: divide('350, 100') -> sum('300, 500, 11000, 3.5')
+    #
+    "
+10 + 5 + 10,"The sum of 10, 5, and 10 is 25.","
+    # Virtual Tool: VirtualTool_General_da4cbfc3
+    # Description: Solves General problems similar to: '10 + 5 + 10'
+    # Created: 2025-04-04T04:43:53.272409
+    # Sequence: sum('10, 5, 10')
+    #
+    "
+100 + 100 + 100 + 100i + 100 + 100,500 + 100i,"
+    # Virtual Tool: VirtualTool_General_7bdb8db2
+    # Description: Solves General problems similar to: '100 + 100 + 100 + 100i + 100 + 100'
+    # Created: 2025-04-04T04:43:53.272450
+    # Sequence: sum('100, 100, 100, 100, 100') -> sum('100, 100, 100, 100, 100')
+    #
+    "
+500 + 500 + 500 + 300  + 500,The sum of 500 + 500 + 500 + 300 + 500 is 2300.,"
+    # Virtual Tool: VirtualTool_General_15f2014f
+    # Description: Solves General problems similar to: '500 + 500 + 500 + 300  + 500'
+    # Created: 2025-04-04T04:43:53.272498
+    # Sequence: sum('500, 500, 500, 300, 500')
+    #
+    "
+10 * 5 * 10,The result of 10 * 5 * 10 is 500.,"
+    # Virtual Tool: VirtualTool_General_c16d0dbf
+    # Description: Solves General problems similar to: '10 * 5 * 10'
+    # Created: 2025-04-04T04:43:53.272544
+    # Sequence: product('10, 5, 10')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:57:28.413484
+    # Sequence: modulo('5, 2')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:57:47.052135
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:57:47.052167
+    # Sequence: sqrt('-1')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:57:54.826676
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:57:54.826741
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:57:54.826775
+    # Sequence: sum('25, 37')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:58:03.032022
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:58:03.032132
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:58:03.032199
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:58:03.032252
+    # Sequence: product('13, 7')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:58:12.561244
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:58:12.561268
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:58:12.561277
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:58:12.561283
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:58:12.561290
+    # Sequence: divide('144, 12')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:58:19.213003
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:58:19.213177
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:58:19.213283
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:58:19.213483
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:58:19.213599
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:58:19.213650
+    # Sequence: sqrt('81')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T04:58:27.713871
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T04:58:27.713967
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T04:58:27.714007
+    # Sequence: sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T04:58:27.714039
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T04:58:27.714071
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.0.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T04:58:27.714102
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T04:58:27.714135
+    # Sequence: power('5, 3')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:11:02.829415
+    # Sequence: modulo('5, 2')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:11:27.270900
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:11:27.270918
+    # Sequence: sqrt('-1')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:11:35.287409
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:11:35.287427
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:11:35.287435
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:11:48.232585
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:11:48.232606
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:11:48.232615
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T05:11:48.232622
+    # Sequence: product('13, 7')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:11:55.577106
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:11:55.577127
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:11:55.577136
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T05:11:55.577144
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T05:11:55.577151
+    # Sequence: divide('144, 12')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:12:03.008714
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:12:03.008823
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:12:03.008877
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T05:12:03.008924
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T05:12:03.008986
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T05:12:03.009030
+    # Sequence: sqrt('81')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:12:13.438154
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:12:13.438220
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:12:13.438251
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T05:12:13.438277
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T05:12:13.438308
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T05:12:13.438332
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T05:12:13.438358
+    # Sequence: power('5, 3')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:12:25.560637
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:12:25.560749
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:12:25.560805
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T05:12:25.560853
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T05:12:25.560898
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T05:12:25.560940
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T05:12:25.560984
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T05:12:25.561034
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:13:56.714214
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:13:56.714398
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:13:56.714489
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T05:13:56.714552
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T05:13:56.714601
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T05:13:56.714646
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T05:13:56.714692
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T05:13:56.714743
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+round 1.578 to 0 decimals,The rounded value of 1.578 to 0 decimal places is 2.,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.578 to 0 decimals'
+    # Created: 2025-04-04T05:13:56.714791
+    # Sequence: round_number('1.578, 0')
+    #
+    "
+(5 mod 2),The result of (5 mod 2) is 1.,"
+    # Virtual Tool: VirtualTool_General_1f684696
+    # Description: Solves General problems similar to: '(5 mod 2)'
+    # Created: 2025-04-04T05:14:16.769636
+    # Sequence: modulo('5, 2')
+    #
+    "
+What is the square root of -1,The square root of -1 is i.,"
+    # Virtual Tool: VirtualTool_Exponentiation_8ccae53e
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of -1'
+    # Created: 2025-04-04T05:14:16.769800
+    # Sequence: sqrt('-1')
+    #
+    "
+What is 25 + 37?,The sum of 25 and 37 is 62.,"
+    # Virtual Tool: VirtualTool_General_882676dd
+    # Description: Solves General problems similar to: 'What is 25 + 37?'
+    # Created: 2025-04-04T05:14:16.769859
+    # Sequence: sum('25, 37') -> sum('25, 37')
+    #
+    "
+Multiply 13 by 7,The result of multiplying 13 by 7 is 91.,"
+    # Virtual Tool: VirtualTool_Multiplication_e55bf54c
+    # Description: Solves Multiplication problems similar to: 'Multiply 13 by 7'
+    # Created: 2025-04-04T05:14:16.769907
+    # Sequence: product('13, 7')
+    #
+    "
+What is 144 divided by 12?,144 divided by 12 is 12.0.,"
+    # Virtual Tool: VirtualTool_Division_0de9bfef
+    # Description: Solves Division problems similar to: 'What is 144 divided by 12?'
+    # Created: 2025-04-04T05:14:16.769953
+    # Sequence: divide('144, 12')
+    #
+    "
+What is the square root of 81?,The square root of 81 is 9.,"
+    # Virtual Tool: VirtualTool_Exponentiation_ec03b9bb
+    # Description: Solves Exponentiation problems similar to: 'What is the square root of 81?'
+    # Created: 2025-04-04T05:14:16.769994
+    # Sequence: sqrt('81')
+    #
+    "
+"If x = 5 and y = 3, what is x^y?",The value of x^y when x = 5 and y = 3 is 125.,"
+    # Virtual Tool: VirtualTool_General_30cd6372
+    # Description: Solves General problems similar to: 'If x = 5 and y = 3, what is x^y?'
+    # Created: 2025-04-04T05:14:16.770042
+    # Sequence: power('5, 3')
+    #
+    "
+(2-3)*5^2 ,-25,"
+    # Virtual Tool: VirtualTool_General_cd1b3ec7
+    # Description: Solves General problems similar to: '(2-3)*5^2 '
+    # Created: 2025-04-04T05:14:16.770092
+    # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
+    #
+    "
+round 1.578 to 0 decimals,The rounded value of 1.578 to 0 decimal places is 2.,"
+    # Virtual Tool: VirtualTool_General_383f560c
+    # Description: Solves General problems similar to: 'round 1.578 to 0 decimals'
+    # Created: 2025-04-04T05:14:16.770138
+    # Sequence: round_number('1.578, 0')
+    #
+    "

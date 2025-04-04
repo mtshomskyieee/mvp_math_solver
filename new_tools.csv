@@ -440,3 +440,10 @@ What is the square root of 81?,The square root of 81 is 9.0.,"
     # Sequence: subtract('2, 3') -> power('5, 2') -> product('-1, 25')
     #
     "
+200 + 200  + 200 + 300,The sum of 200 + 200 + 200 + 300 is 900.,"
+    # Virtual Tool: VirtualTool_General_cc8bbce6
+    # Description: Solves General problems similar to: '200 + 200  + 200 + 300'
+    # Created: 2025-04-03T23:42:56.207645
+    # Sequence: sum('200, 200, 200, 300')
+    #
+    "

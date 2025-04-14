@@ -1,4 +1,4 @@
-# math_solver/workflows/math_workflow.py
+# math_solver/workflows/math_workflow.py (modified)
 import time
 import re
 import os
@@ -15,15 +15,17 @@ logger = setup_logger("math_workflow")
 _workflow_cache = {}
 
 
-def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm, callback_handler=None) -> Dict[
-    str, Any]:
+def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, math_planner_agent, plan_execution_agent,
+                  vtm, callback_handler=None) -> Dict[str, Any]:
     """
     Execute the math problem solving workflow with multiple agents and majority voting:
-    1. Math_solver_agent
-    2. Validation_agent
-    3. CAS_agent
+    1. Math_planner_agent - Plans the solution steps
+    2. Plan_execution_agent - Executes the plan
+    3. Math_solver_agent - Alternative approach using tools directly
+    4. Validation_agent - Validates the solution
+    5. CAS_agent - Computer algebra system approach
 
-    Use majority voting (2 out of 3 agreement) to determine the final answer.
+    Use majority voting (agreement among agents) to determine the final answer.
     """
     global _workflow_cache
 
@@ -94,14 +96,17 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
         raise StopException("Waiting for user input in workflow")
 
     # Solutions from each agent
+    planner_solution = None
+    executor_solution = None
     solver_solution = None
     validation_solution = None
     cas_solution = None
+    plan_data = None
 
     while attempts < max_retries and not is_verified:
         attempts += 1
 
-        # Solve the problem with all three agents
+        # Solve the problem with all agents
         if callback_handler:
             callback_handler.container.write(f"Attempt {attempts}/{max_retries}: Solving the problem...")
 
@@ -175,9 +180,56 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
                 virtual_tool = None
                 continue
 
-        # If we don't have a solution yet, solve with all three agents
+        # If we don't have a solution yet, solve with all agents
         if solver_solution is None:
-            # 1. Use Math Solver Agent
+            # 1. First use Math Planner Agent to create a plan
+            try:
+                if callback_handler:
+                    callback_handler.container.write("Creating solution plan with Math Planner Agent...")
+
+                # Get the available tools as a string for the planner
+                tools_description = solver_agent.toolbox.get_tools_string()
+
+                # Create the solution plan
+                plan_result = math_planner_agent.plan_solution(problem, tools_description, callback_handler)
+                plan_data = plan_result.get("structured_plan")
+
+                if callback_handler:
+                    callback_handler.container.write("Plan created successfully.")
+
+            except StopException:
+                # Propagate user input exceptions
+                raise
+            except Exception as e:
+                logger.error(f"Math Planner Agent error: {str(e)}")
+                if callback_handler:
+                    callback_handler.container.write(f"Math Planner Agent error: {str(e)}")
+
+            # 2. Use Plan Execution Agent to execute the plan
+            if plan_data:
+                try:
+                    if callback_handler:
+                        callback_handler.container.write("Executing plan with Plan Execution Agent...")
+
+                    execution_result = plan_execution_agent.execute_plan(problem, plan_data, callback_handler)
+                    executor_solution = execution_result.get("solution")
+                    # Store the full execution result to preserve all details
+                    plan_execution_details = execution_result
+
+                    if callback_handler:
+                        callback_handler.container.markdown(f"### Plan Execution Solution")
+                        callback_handler.container.markdown(executor_solution)
+
+                except StopException:
+                    # Propagate user input exceptions
+                    raise
+                except Exception as e:
+                    logger.error(f"Plan Execution Agent error: {str(e)}")
+                    plan_execution_details = None
+                    if callback_handler:
+                        callback_handler.container.write(f"Plan Execution Agent error: {str(e)}")
+
+            # 3. Use Math Solver Agent (original approach)
             try:
                 if callback_handler:
                     callback_handler.container.write("Solving with Math Solver Agent...")
@@ -203,7 +255,7 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
                 if callback_handler:
                     callback_handler.container.write(f"Math Solver Agent error: {str(e)}")
 
-            # 2. Use Validation Agent
+            # 4. Use Validation Agent
             try:
                 if callback_handler:
                     callback_handler.container.write("Solving with Validation Agent...")
@@ -221,7 +273,7 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
                 if callback_handler:
                     callback_handler.container.write(f"Validation Agent error: {str(e)}")
 
-            # 3. Use CAS Agent
+            # 5. Use CAS Agent
             try:
                 if callback_handler:
                     callback_handler.container.write("Solving with CAS Agent...")
@@ -240,25 +292,39 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
             # Now perform majority voting
             if callback_handler:
                 callback_handler.container.write("Performing majority voting...")
+            # In math_solver/workflows/math_workflow.py
 
-            # Normalize solutions for comparison
+            # Add this before the majority voting logic
+            if callback_handler:
+                callback_handler.container.write("Performing majority voting...")
+
+            # Log normalized solutions for debugging
+            logger.info("=== Normalized Solutions for Voting ===")
             normalized_solutions = {}
+            if executor_solution:
+                normalized_solutions["plan_executor"] = _normalize_solution(executor_solution)
+                logger.info(f"Plan Executor: {executor_solution} -> {normalized_solutions['plan_executor']}")
             if solver_solution:
                 normalized_solutions["solver"] = _normalize_solution(solver_solution)
+                logger.info(f"Solver: {solver_solution} -> {normalized_solutions['solver']}")
             if validation_solution:
                 normalized_solutions["validation"] = _normalize_solution(validation_solution)
+                logger.info(f"Validation: {validation_solution} -> {normalized_solutions['validation']}")
             if cas_solution:
                 normalized_solutions["cas"] = _normalize_solution(cas_solution)
+                logger.info(f"CAS: {cas_solution} -> {normalized_solutions['cas']}")
 
-            # Log the normalized solutions
+            # Show normalized solutions in the UI
             if callback_handler:
+                callback_handler.container.markdown("#### Normalized Solutions for Voting")
                 for agent, norm_sol in normalized_solutions.items():
-                    callback_handler.container.write(f"Normalized {agent} solution: {norm_sol}")
+                    callback_handler.container.write(f"{agent}: {norm_sol}")
 
             # Count solutions that agree with each other
             solution_counts = {}
             for agent, sol in normalized_solutions.items():
                 if sol is None:
+                    logger.info(f"Skipping None solution from {agent}")
                     continue  # Skip None values
                 if sol not in solution_counts:
                     solution_counts[sol] = {"count": 1, "agents": [agent]}
@@ -272,16 +338,17 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
             max_count = 0
 
             for sol, data in solution_counts.items():
-                logger.info(f"agent solutions: {sol}, {data}")
+                logger.info(f"Solution: {sol}, Count: {data['count']}, Agents: {', '.join(data['agents'])}")
                 if data["count"] >= 2 and data["count"] > max_count:  # Find the solution with the most agreement
                     majority_solution = sol
                     majority_agents = data["agents"]
                     max_count = data["count"]
 
-            logger.info(f"Majority solution: {majority_solution}")
+            logger.info(f"Identified majority solution: {majority_solution} with agents: {majority_agents}")
+
             if majority_solution:
                 if callback_handler:
-                    callback_handler.container.write(f"🏛️ Tribunal solution: {majority_solution}")
+                    callback_handler.container.success(f"🏛️ Tribunal solution: {majority_solution}")
                     callback_handler.container.write(f"Agents that agree: {', '.join(majority_agents)}")
 
                 logger.info(f"Majority solution found: {majority_solution}")
@@ -292,13 +359,19 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
                 is_verified = True  # Always mark as verified when we have majority agreement
                 verification_result = f"Solution verified by tribunal vote ({', '.join(majority_agents)})"
             else:
-                # No majority - default to solver solution with verification
-                if callback_handler:
-                    callback_handler.container.write(
-                        "No tribunal majority found, using Math Solver Agent solution with verification...")
+                # No majority - prioritize plan execution agent if available, otherwise default to solver solution
+                if executor_solution:
+                    if callback_handler:
+                        callback_handler.container.write(
+                            "No tribunal majority found, using Plan Execution Agent solution with verification...")
+                    solution = executor_solution
+                else:
+                    if callback_handler:
+                        callback_handler.container.write(
+                            "No tribunal majority found, using Math Solver Agent solution with verification...")
+                    solution = solver_solution
 
-                solution = solver_solution
-                # Verify the solution from solver agent
+                # Verify the solution
                 is_verified, verification_result = verification_agent.verify_result(
                     problem, solution, callback_handler
                 )
@@ -360,7 +433,10 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
         "used_virtual_tool": used_virtual_tool,
         "virtual_tool_info": virtual_tool_info,
         "from_cache": False,
+        "plan_data": plan_data,
+        "plan_execution_details": plan_execution_details if 'plan_execution_details' in locals() else None,
         "agent_solutions": {
+            "plan_executor": executor_solution,
             "solver": solver_solution,
             "validation": validation_solution,
             "cas": cas_solution
@@ -379,24 +455,77 @@ def math_workflow(problem: str, solver_agent, verification_agent, cas_agent, vtm
     return result
 
 
+# In math_solver/workflows/math_workflow.py
+
 def _normalize_solution(solution_text):
-    """Normalize a solution string for comparison."""
+    """Normalize a solution string for comparison - improved version."""
     if not solution_text:
         return None
+
+    logger.info(f"Normalizing solution: {solution_text}")
 
     # Convert to lowercase and remove extra whitespace
     normalized = solution_text.lower().strip()
 
-    # Extract numeric value if possible
-    numeric_match = re.search(r'[-+]?\d*\.?\d+', normalized)
+    # Check for explicit answer patterns first - more specific patterns first
+    answer_patterns = [
+        # For statements like "The answer to the problem is 62"
+        r'answer\s*(?:to|is|:|=)\s*(?:the\s*problem)?\s*(?:is|:|=)?\s*(-?\d+\.?\d*)',
+        # For statements like "The sum of 25 and 37 is 62"
+        r'(?:sum|product|difference|quotient|result).*?(?:is|:|=)\s*(-?\d+\.?\d*)',
+        # For statements like "25 + 37 equals 62"
+        r'(?:equals|equal\s*to)\s*(-?\d+\.?\d*)',
+        # For any numbers after specific keywords
+        r'(?:is|:|=|gives|yields|evaluates\s*to)\s*(-?\d+\.?\d*)'
+    ]
+
+    for pattern in answer_patterns:
+        match = re.search(pattern, normalized)
+        if match:
+            try:
+                value = float(match.group(1))
+                logger.info(f"Matched pattern '{pattern}' to extract: {value}")
+                # Return as integer if it's a whole number
+                if value.is_integer():
+                    return str(int(value))
+                # Otherwise return with limited precision
+                return f"{value:.6f}".rstrip('0').rstrip('.')
+            except Exception as e:
+                logger.error(f"Error converting matched value: {e}")
+                continue
+
+    # If the entire string is just a number, use that (this helps with Validation and CAS agents)
+    if re.match(r'^-?\d+\.?\d*$', normalized):
+        try:
+            value = float(normalized)
+            logger.info(f"Using numeric string directly: {value}")
+            if value.is_integer():
+                return str(int(value))
+            return f"{value:.6f}".rstrip('0').rstrip('.')
+        except:
+            pass
+
+    # Fall back to extracting any numeric value - last resort
+    numeric_match = re.search(r'(-?\d+\.?\d+)', normalized)
     if numeric_match:
         try:
             # Convert to float and format consistently
-            value = float(numeric_match.group(0))
+            value = float(numeric_match.group(1))
+            logger.info(f"Extracted numeric value (fallback): {value}")
             # Return as integer if it's a whole number
             if value.is_integer():
                 return str(int(value))
             # Otherwise return with limited precision
+            return f"{value:.6f}".rstrip('0').rstrip('.')
+        except:
+            pass
+
+    # If the entire string is just a number, use that
+    if re.match(r'^-?\d+\.?\d*$', normalized):
+        try:
+            value = float(normalized)
+            if value.is_integer():
+                return str(int(value))
             return f"{value:.6f}".rstrip('0').rstrip('.')
         except:
             pass
@@ -425,8 +554,8 @@ def _normalize_solution(solution_text):
                     return f"{real}{imag}i"
 
     # Return the cleaned text if we couldn't extract a number
+    logger.info(f"Could not extract numeric value, returning cleaned text: {normalized}")
     return normalized
-
 
 def _extract_verification_solution(verification_text):
     """Extract solution from verification agent output."""

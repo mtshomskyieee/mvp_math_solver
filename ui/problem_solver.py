@@ -4,6 +4,8 @@ from config.settings import SAMPLE_PROBLEMS
 from core.callbacks import StreamlitCallbackHandler
 from workflows.math_workflow import math_workflow
 from utils.exceptions import StopException
+import re
+
 
 def problem_input_section():
     """Render the problem input section."""
@@ -52,116 +54,216 @@ def problem_input_section():
     return problem
 
 
-def solve_problem_section(problem, solver_agent, verification_agent, cas_agent):  # Add cas_agent
+def solve_problem_section(problem, solver_agent, verification_agent, cas_agent):
     """Render the problem solving section."""
     # Check if we're in the middle of waiting for user input
     waiting_for_input = any(key.startswith("user_input_") and key.endswith("_timeout_counter")
                             for key in st.session_state.keys())
 
-    # Check if we need to clear the solving state
-    if "clear_solving_state" in st.session_state and st.session_state.clear_solving_state:
-        if "solving_in_progress" in st.session_state:
-            del st.session_state.solving_in_progress
-        st.session_state.clear_solving_state = False
+    # Add a "Clear Results" button if we have results
+    if st.session_state.get("workflow_result"):
+        col1, col2 = st.columns([1, 5])
+        with col1:
+            if st.button("Clear Results"):
+                # Remove all results and reset state
+                if "workflow_result" in st.session_state:
+                    del st.session_state.workflow_result
+                if "solving_in_progress" in st.session_state:
+                    del st.session_state.solving_in_progress
+                st.rerun()
 
-        # Also clear any timeout counters to prevent issues
-        for key in list(st.session_state.keys()):
-            if key.endswith("_timeout_counter"):
-                del st.session_state[key]
+    # Always show the solve button
+    if st.button("Solve Problem"):
+        if problem:
+            # Mark that we're solving a problem
+            st.session_state.solving_in_progress = True
 
-        st.rerun()
+            # Create a placeholder for solution process
+            solution_process = st.empty()
 
-    # Only show the solve button if we're not already solving and not waiting for input
-    if "solving_in_progress" not in st.session_state and not waiting_for_input:
-        if st.button("Solve Problem"):
-            if problem:
-                # Mark that we're solving a problem
-                st.session_state.solving_in_progress = True
+            with solution_process.container():
+                st.markdown("### Solution Process")
+                # Check for virtual tool first
+                virtual_tool_manager = st.session_state.virtual_tool_manager
+                virtual_tool = virtual_tool_manager.find_matching_virtual_tool(problem)
+                if virtual_tool:
+                    st.write(f"Found a virtual tool that can solve this: {virtual_tool['name']}")
 
-                solution_container = st.container()
+                st.write("Starting solution workflow with planning, execution, validation and retries...")
+
                 # Create a callback handler for Streamlit
-                callback_handler = StreamlitCallbackHandler(solution_container)
+                callback_handler = StreamlitCallbackHandler(st)
 
-                with solution_container:
-                    st.markdown("### Solution Process")
-                    # Check for virtual tool first
-                    virtual_tool_manager = st.session_state.virtual_tool_manager
-                    virtual_tool = virtual_tool_manager.find_matching_virtual_tool(problem)
-                    if virtual_tool:
-                        st.write(f"Found a virtual tool that can solve this: {virtual_tool['name']}")
+                try:
+                    # Run the math workflow with all agents
+                    result = math_workflow(
+                        problem=problem,
+                        solver_agent=solver_agent,
+                        verification_agent=verification_agent,
+                        cas_agent=cas_agent,
+                        math_planner_agent=st.session_state.math_planner_agent,
+                        plan_execution_agent=st.session_state.plan_execution_agent,
+                        vtm=st.session_state.virtual_tool_manager,
+                        callback_handler=callback_handler
+                    )
 
-                    st.write("Starting solution workflow with validation and retries...")
+                    # Store results in session state
+                    st.session_state.workflow_result = result
+                    # We're done solving
+                    st.session_state.solving_in_progress = False
+                    # Update the sidebar
+                    st.session_state.sidebar_update_trigger = True
+                    st.rerun()
 
-                    try:
-                        # Run the math workflow with the CAS agent
-                        result = math_workflow(
-                            problem=problem,
-                            solver_agent=solver_agent,
-                            verification_agent=verification_agent,
-                            cas_agent=cas_agent,  # Add CAS agent
-                            vtm=st.session_state.virtual_tool_manager,
-                            callback_handler=callback_handler
-                        )
+                except StopException:
+                    # This exception will be thrown when we need user input
+                    # Just let it pass - Streamlit will rerun and we'll continue
+                    pass
+                except Exception as e:
+                    st.error(f"Error solving problem: {str(e)}")
+                    st.session_state.solving_in_progress = False
+        else:
+            st.error("Please enter a problem to solve.")
 
-                        # Store results in session state
-                        st.session_state.workflow_result = result
-                        # We're done solving
-                        st.session_state.clear_solving_state = True
-                        # Update the sidebar
-                        st.session_state.sidebar_update_trigger = True
-                        # Rerun to update the display
-                        st.rerun()
-                    except StopException:
-                        # This exception will be thrown when we need user input
-                        # Just let it pass - Streamlit will rerun and we'll continue
-                        pass
-                    except Exception as e:
-                        st.error(f"Error solving problem: {str(e)}")
-                        st.session_state.clear_solving_state = True
-                        st.rerun()
-            else:
-                st.error("Please enter a problem to solve.")
     elif waiting_for_input:
         # If we're waiting for user input, display a message
         st.info("Please provide the requested input above to continue solving the problem.")
-    else:
+
+    elif "solving_in_progress" in st.session_state and st.session_state.solving_in_progress:
         # If we're in the middle of solving, continue the workflow
-        solution_container = st.container()
-        callback_handler = StreamlitCallbackHandler(solution_container)
+        st.markdown("### Solution Process (Continuing)")
+        st.write("Continuing solution process...")
 
-        with solution_container:
-            st.markdown("### Solution Process (Continuing)")
+        # Create a callback handler for Streamlit
+        callback_handler = StreamlitCallbackHandler(st)
 
-            try:
-                # Continue the math workflow with the CAS agent
-                result = math_workflow(
-                    problem=problem,
-                    solver_agent=solver_agent,
-                    verification_agent=verification_agent,
-                    cas_agent=cas_agent,  # Add CAS agent
-                    vtm=st.session_state.virtual_tool_manager,
-                    callback_handler=callback_handler
-                )
+        try:
+            # Continue the math workflow with all agents
+            result = math_workflow(
+                problem=problem,
+                solver_agent=solver_agent,
+                verification_agent=verification_agent,
+                cas_agent=cas_agent,
+                math_planner_agent=st.session_state.math_planner_agent,
+                plan_execution_agent=st.session_state.plan_execution_agent,
+                vtm=st.session_state.virtual_tool_manager,
+                callback_handler=callback_handler
+            )
 
-                # Store results in session state
-                st.session_state.workflow_result = result
-                # We're done solving
-                st.session_state.clear_solving_state = True
-                # Update the sidebar
-                st.session_state.sidebar_update_trigger = True
-                # Rerun to update the display
-                st.rerun()
-            except StopException:
-                # This exception will be thrown when we need user input
-                # Just let it pass - Streamlit will rerun and we'll continue
-                pass
-            except Exception as e:
-                st.error(f"Error solving problem: {str(e)}")
-                st.session_state.clear_solving_state = True
-                st.rerun()
+            # Store results in session state
+            st.session_state.workflow_result = result
+            # We're done solving
+            st.session_state.solving_in_progress = False
+            # Update the sidebar
+            st.session_state.sidebar_update_trigger = True
+            st.rerun()
+
+        except StopException:
+            # This exception will be thrown when we need user input
+            # Just let it pass - Streamlit will rerun and we'll continue
+            pass
+        except Exception as e:
+            st.error(f"Error solving problem: {str(e)}")
+            st.session_state.solving_in_progress = False
 
 
-# math_solver/ui/problem_solver.py - modify the display_agent_comparison function
+# In math_solver/ui/problem_solver.py
+# Update the display_solution_results function to ensure plan execution output is shown
+
+def display_solution_results():
+    """Display solution results if available."""
+    if st.session_state.get("workflow_result"):
+        result = st.session_state.workflow_result
+
+        st.markdown("### Solution")
+        # Check if this was a tribunal decision
+        if "tribunal" in result.get("verification_result", "").lower():
+            # Display the tribunal solution directly
+            tribunal_solution = result["solution"]
+            st.markdown(f"🏛️ **Tribunal solution**: {tribunal_solution}")
+
+            # Show the source agents for the tribunal decision
+            tribunal_agents = re.search(r'tribunal vote \((.*?)\)', result.get("verification_result", ""))
+            if tribunal_agents:
+                st.markdown(f"*Agreement between: {tribunal_agents.group(1)}*")
+        else:
+            st.write(result["solution"])
+
+        st.markdown("### Verification")
+        if result["is_verified"]:
+            st.success(f"✅ The solution has been verified as correct! (Attempts: {result['attempts']})")
+        else:
+            st.error(f"❌ The solution could not be verified after {result['attempts']} attempts.")
+
+        st.write(result["verification_result"])
+
+        # Display agent solutions if available
+        if 'agent_solutions' in result:
+            st.markdown("### Agent Solutions")
+            for agent, solution in result['agent_solutions'].items():
+                if solution:
+                    # Use descriptive agent names
+                    agent_name = agent.capitalize()
+                    if agent == "plan_executor":
+                        agent_name = "Plan Executor"
+                    elif agent == "solver":
+                        agent_name = "Math Solver"
+                    elif agent == "validation":
+                        agent_name = "Validation Agent"
+                    elif agent == "cas":
+                        agent_name = "CAS Agent"
+
+                    st.markdown(f"**{agent_name}**: {solution}")
+
+        # Show plan execution details if available
+        if result.get("plan_execution_details"):
+            with st.expander("Show Plan Execution Details", expanded=False):
+                st.markdown("### Plan Execution Details")
+
+                plan_details = result.get("plan_execution_details", {})
+
+                # Show final result
+                if "final_result" in plan_details:
+                    st.markdown(f"**Final Result:** {plan_details['final_result']}")
+
+                # Display intermediate results if available
+                if "intermediate_results" in plan_details:
+                    st.markdown("#### Step-by-Step Execution")
+                    for step in plan_details.get("intermediate_results", []):
+                        # Create a clean display for each step
+                        col1, col2 = st.columns([1, 3])
+                        with col1:
+                            st.markdown(f"**Step {step.get('step', '?')}:**")
+                        with col2:
+                            st.markdown(step.get('description', 'No description'))
+
+                        # Show tool details in an indented area
+                        if "tool" in step:
+                            with st.container():
+                                st.markdown(f"**Tool:** `{step.get('tool', 'Unknown')}`")
+                                st.markdown(f"**Input:** `{step.get('input', 'None')}`")
+
+                                if "result" in step:
+                                    # Highlight successful results in green
+                                    st.success(f"**Result:** {step.get('result', 'None')}")
+                                elif "error" in step:
+                                    # Highlight errors in red
+                                    st.error(f"**Error:** {step.get('error', 'Unknown error')}")
+                                elif "note" in step:
+                                    # Show notes in blue info boxes
+                                    st.info(step.get('note', ''))
+
+                        # Add a separator between steps
+                        st.markdown("---")
+
+        if result.get("used_virtual_tool", False):
+            st.info(f"This problem was solved using a virtual tool!")
+
+        if result["attempts"] > 1:
+            st.info(f"The math solver needed {result['attempts']} attempts to reach a verified solution.")
+
+        # Display what each agent had
+        display_agent_comparison(result)
 
 def display_agent_comparison(result):
     """Display a comparison of all agent solutions."""
@@ -176,9 +278,22 @@ def display_agent_comparison(result):
                 verification = "N/A"
                 if agent == "solver" and result.get("verification_result"):
                     verification = result["verification_result"]
+                elif agent == "plan_executor" and result.get("verification_result"):
+                    verification = result["verification_result"]
+
+                # Use more descriptive agent names in the table
+                agent_display_name = agent.capitalize()
+                if agent == "plan_executor":
+                    agent_display_name = "Plan Executor"
+                elif agent == "solver":
+                    agent_display_name = "Math Solver"
+                elif agent == "validation":
+                    agent_display_name = "Validation Agent"
+                elif agent == "cas":
+                    agent_display_name = "CAS Agent"
 
                 agent_data.append({
-                    "Agent": agent.capitalize(),
+                    "Agent": agent_display_name,
                     "Solution": solution,
                     "Verification": verification,
                 })
@@ -189,52 +304,28 @@ def display_agent_comparison(result):
             df = pd.DataFrame(agent_data)
             st.table(df)
 
-# In ui/problem_solver.py, update the display_solution_results function
+            # If we have plan data, offer to show it
+            if result.get("plan_data"):
+                if st.checkbox("Show Solution Plan Details"):
+                    st.markdown("### 📝 Solution Plan")
+                    plan = result["plan_data"]
 
-def display_solution_results():
-    """Display solution results if available."""
-    if st.session_state.get("workflow_result"):
-        result = st.session_state.workflow_result
-        solution_container = st.container()
+                    st.markdown(f"**Problem Type:** {plan.get('problem_type', 'Not specified')}")
 
-        with solution_container:
-            st.markdown("### Solution")
-            # Check if this was a tribunal decision
-            if "tribunal" in result.get("verification_result", "").lower():
-                st.markdown(f"🏛️ **Tribunal solution**: {result['solution']}")
-            else:
-                st.write(result["solution"])
+                    st.markdown("**Steps:**")
+                    for i, step in enumerate(plan.get("steps", [])):
+                        desc = step.get("description", "")
+                        tool_info = step.get("tool_info", {})
 
-            st.markdown("### Verification")
-            if result["is_verified"]:
-                st.success(f"✅ The solution has been verified as correct! (Attempts: {result['attempts']})")
-            else:
-                st.error(f"❌ The solution could not be verified after {result['attempts']} attempts.")
+                        if tool_info:
+                            st.markdown(f"**Step {i + 1}:** {desc}")
+                            st.markdown(f"- Tool: `{tool_info.get('tool', 'None')}`")
+                            st.markdown(f"- Input: `{tool_info.get('input', 'None')}`")
+                        else:
+                            st.markdown(f"**Step {i + 1}:** {desc}")
 
-            st.write(result["verification_result"])
-
-            # Display agent solutions if available
-            if 'agent_solutions' in result:
-                st.markdown("### Agent Solutions")
-                for agent, solution in result['agent_solutions'].items():
-                    if solution:
-                        st.markdown(f"**{agent.capitalize()}**: {solution}")
-
-            if result.get("used_virtual_tool", False):
-                st.info(f"This problem was solved using a virtual tool!")
-
-            if result["attempts"] > 1:
-                st.info(f"The math solver needed {result['attempts']} attempts to reach a verified solution.")
-
-        # Display what each agent had
-        display_agent_comparison(result)
-
-        # Reset the session state
-        if st.button("Solve Another Problem"):
-            # Clear workflow result
-            st.session_state.workflow_result = None
-            # Make sure solving state is cleared
-            if "solving_in_progress" in st.session_state:
-                del st.session_state.solving_in_progress
-            # Rerun to update the UI
-            st.rerun()
+                    # Show final step
+                    final_step = plan.get("final_step", {})
+                    if final_step:
+                        st.markdown(f"**Final Step:** {final_step.get('description', '')}")
+                        st.markdown(f"**Result Info:** {final_step.get('result_info', '')}")

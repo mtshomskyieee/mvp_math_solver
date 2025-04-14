@@ -8,7 +8,9 @@ from core.math_toolbox import MathToolbox
 from core.virtual_tool_manager import VirtualToolManager
 from agents.solver_agent import MathSolverAgent
 from agents.verification_agent import VerificationAgent
-from agents.cas_agent import CASAgent  # Import the new CAS agent
+from agents.cas_agent import CASAgent
+from agents.math_planner_agent import MathPlannerAgent  # Import the new agents
+from agents.plan_execution_agent import PlanExecutionAgent
 from workflows.math_workflow import math_workflow
 from ui.sidebar import render_sidebar
 from ui.problem_solver import problem_input_section, solve_problem_section, display_solution_results
@@ -54,7 +56,14 @@ def initialize_session_state():
         st.session_state.verification_agent = VerificationAgent(st.session_state.toolbox)
 
     if "cas_agent" not in st.session_state:
-        st.session_state.cas_agent = CASAgent()  # Initialize the new CAS agent
+        st.session_state.cas_agent = CASAgent()
+
+    # Initialize the new agents
+    if "math_planner_agent" not in st.session_state:
+        st.session_state.math_planner_agent = MathPlannerAgent()
+
+    if "plan_execution_agent" not in st.session_state:
+        st.session_state.plan_execution_agent = PlanExecutionAgent(st.session_state.toolbox)
 
     # Add session state variables for the process flow
     if "sidebar_update_trigger" not in st.session_state:
@@ -78,7 +87,7 @@ def get_virtual_tool_manager():
     return None
 
 
-def run_evaluation_section(solver_agent, verification_agent, cas_agent):  # Add cas_agent to parameters
+def run_evaluation_section(solver_agent, verification_agent, cas_agent, math_planner_agent, plan_execution_agent):
     """Render the evaluation section."""
     st.header("Run Evaluation")
 
@@ -99,7 +108,9 @@ def run_evaluation_section(solver_agent, verification_agent, cas_agent):  # Add 
                     problem=problem,
                     solver_agent=solver_agent,
                     verification_agent=verification_agent,
-                    cas_agent=cas_agent,  # Add the CAS agent
+                    cas_agent=cas_agent,
+                    math_planner_agent=math_planner_agent,
+                    plan_execution_agent=plan_execution_agent,
                     vtm=st.session_state.virtual_tool_manager
                 )
                 solution_time = time.time() - start_time
@@ -186,7 +197,9 @@ def app():
                     problem=context["problem"],
                     solver_agent=context["solver_agent"],
                     verification_agent=context["verification_agent"],
-                    cas_agent=st.session_state.cas_agent,  # Add CAS agent
+                    cas_agent=st.session_state.cas_agent,
+                    math_planner_agent=st.session_state.math_planner_agent,  # Add the new agents
+                    plan_execution_agent=st.session_state.plan_execution_agent,
                     vtm=st.session_state.virtual_tool_manager,
                     callback_handler=context["callback_handler"]
                 )
@@ -217,7 +230,7 @@ def app():
             problem,
             st.session_state.solver_agent,
             st.session_state.verification_agent,
-            st.session_state.cas_agent  # Pass the CAS agent
+            st.session_state.cas_agent
         )
         display_solution_results()
 
@@ -226,6 +239,8 @@ def app():
         run_evaluation_section(
             st.session_state.solver_agent,
             st.session_state.verification_agent,
-            st.session_state.cas_agent  # Pass the CAS agent
+            st.session_state.cas_agent,
+            st.session_state.math_planner_agent,  # Add the new agents
+            st.session_state.plan_execution_agent
         )
         display_evaluation_results()

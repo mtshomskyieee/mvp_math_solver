@@ -319,7 +319,8 @@ class VirtualToolManager:
                         "power": math_toolbox.power,
                         "sqrt": math_toolbox.sqrt,
                         "modulo": math_toolbox.modulo,
-                        "round_number": math_toolbox.round_number
+                        "round_number": math_toolbox.round_number,
+                        "avg":math_toolbox.avg,
                     }
 
                     try:

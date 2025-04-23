@@ -54,14 +54,10 @@ class PlanExecutionAgent:
 
         try:
             # Initialize variables to track the execution
-            step_results = {}
-            intermediate_results = []
+            step_results = {}  # Initialize this at the top of the method
+            intermediate_results = []  # Initialize this as well
 
             # Execute each step in the plan
-            # In math_solver/agents/plan_execution_agent.py
-            # Update part of the execute_plan method
-
-            # Inside the execute_plan method, update the part that processes steps:
             for idx, step in enumerate(plan.get("steps", [])):
                 step_num = idx + 1
                 description = step.get("description", "")
@@ -72,24 +68,43 @@ class PlanExecutionAgent:
 
                 # Check if we have tool information
                 if tool_info and "tool" in tool_info:
-                    tool_name = tool_info["tool"]
+                    tool_name = tool_info["tool"].lower().strip()  # Normalize tool name
                     raw_input = tool_info["input"]
+
+                    # Handle special case for "none" tool
+                    if tool_name == "none" or tool_name == "[none]":
+                        if callback_handler:
+                            callback_handler.container.write(f"No tool needed for this step. Continuing...")
+
+                        # Store the raw input as the result for this step
+                        step_results[step_num] = raw_input
+
+                        intermediate_results.append({
+                            "step": step_num,
+                            "description": description,
+                            "note": "No tool execution needed"
+                        })
+                        continue
 
                     # Process the input - replace references to previous steps with actual values
                     try:
                         processed_input = self._process_tool_input(raw_input, step_results)
 
+                        # Map tool name to actual tool name if needed
+                        mapped_tool_name = self._map_tool_name(tool_name)
+
                         if callback_handler:
-                            callback_handler.container.write(f"Using tool: {tool_name} with input: {processed_input}")
+                            callback_handler.container.write(
+                                f"Using tool: {mapped_tool_name} with input: {processed_input}")
 
                         # Execute the tool
-                        if tool_name in self.tool_mapping:
-                            tool_func = self.tool_mapping[tool_name]
+                        if mapped_tool_name in self.tool_mapping:
+                            tool_func = self.tool_mapping[mapped_tool_name]
                             result = tool_func(processed_input)
 
                             # Track tool usage in execution history
                             self.execution_history.append({
-                                "tool": tool_name,
+                                "tool": mapped_tool_name,
                                 "tool_input": processed_input
                             })
 
@@ -102,20 +117,25 @@ class PlanExecutionAgent:
                             intermediate_results.append({
                                 "step": step_num,
                                 "description": description,
-                                "tool": tool_name,
+                                "tool": mapped_tool_name,
                                 "input": processed_input,
                                 "result": result
                             })
                         else:
-                            error_msg = f"Unknown tool: {tool_name}"
+                            error_msg = f"Unknown tool: {mapped_tool_name}"
                             if callback_handler:
+                                # Try to suggest the correct tool name
+                                suggestions = self._get_tool_suggestions(mapped_tool_name)
+                                if suggestions:
+                                    error_msg += f". Did you mean one of these: {', '.join(suggestions)}?"
+
                                 callback_handler.container.error(error_msg)
                             logger.error(error_msg)
 
                             intermediate_results.append({
                                 "step": step_num,
                                 "description": description,
-                                "tool": tool_name,
+                                "tool": mapped_tool_name,
                                 "input": processed_input,
                                 "error": error_msg
                             })
@@ -201,6 +221,63 @@ class PlanExecutionAgent:
                 "execution_history": self.execution_history,
                 "successful": False
             }
+
+    def _map_tool_name(self, tool_name: str) -> str:
+        """
+        Map potential tool name variations to the actual available tool names.
+
+        Args:
+            tool_name: The tool name to map
+
+        Returns:
+            Mapped tool name that matches an available tool
+        """
+        # Remove any brackets
+        clean_name = tool_name.strip('[]').lower()
+
+        # Direct mapping for common variations
+        name_mapping = {
+            'sum': 'sum',
+            'add': 'sum',
+            'addition': 'sum',
+            'product': 'product',
+            'multiply': 'product',
+            'multiplication': 'product',
+            'divide': 'divide',
+            'division': 'divide',
+            'subtract': 'subtract',
+            'subtraction': 'subtract',
+            'power': 'power',
+            'exponent': 'power',
+            'square root': 'sqrt',
+            'sqrt': 'sqrt',
+            'modulo': 'modulo',
+            'mod': 'modulo',
+            'remainder': 'modulo',
+            'round': 'round_number',
+            'rounding': 'round_number',
+            'round_number': 'round_number',
+            'average': 'avg',
+            'avg': 'avg',
+            'mean': 'avg',
+            'none': 'none'
+        }
+
+        return name_mapping.get(clean_name, clean_name)
+
+    def _get_tool_suggestions(self, invalid_tool_name: str) -> list:
+        """
+        Get suggestions for an invalid tool name based on available tools.
+
+        Args:
+            invalid_tool_name: The invalid tool name
+
+        Returns:
+            List of suggested valid tool names
+        """
+        from difflib import get_close_matches
+        available_tools = list(self.tool_mapping.keys())
+        return get_close_matches(invalid_tool_name, available_tools, n=3, cutoff=0.6)
 
     def _process_tool_input(self, raw_input: str, step_results: Dict[int, str]) -> str:
         """

@@ -134,9 +134,12 @@ class MathPlannerAgent:
                                 tool_name = tool_info_text[len("Use tool:"):tool_match].strip()
                                 tool_input = tool_info_text[tool_match + len("with input:"):].strip()
 
+                                # Clean up the tool name - REMOVE ANY BRACKETS
+                                tool_name = tool_name.strip('[]').strip()
+
                                 # Clean up the tool input format
                                 # Remove any unnecessary quotes
-                                tool_input = tool_input.strip('"\'')
+                                tool_input = tool_input.strip('"\'[]')
 
                                 steps.append({
                                     "description": description,
@@ -164,6 +167,9 @@ class MathPlannerAgent:
                 if result_split > 0:
                     description = final_text[:result_split].strip()
                     result_info = final_text[result_split + len("Final answer will be:"):].strip()
+
+                    # Clean up any brackets in the result info
+                    result_info = result_info.strip('[]')
 
                     final_step = {
                         "description": description,

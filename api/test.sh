@@ -1,4 +1,8 @@
-
+echo "Tribunal"
+# Example request to the tribunal endpoint
+curl -X POST "http://localhost:8000/api/tribunal" \
+     -H "Content-Type: application/json" \
+     -d '{"problem": "What is 25 + 37?"}'
 echo
 echo "CAS"
 # Example request to the CAS agent

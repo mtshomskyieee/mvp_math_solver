@@ -1,4 +1,3 @@
-# api/main.py
 from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,6 +9,8 @@ import json
 from agents.cas_agent import CASAgent
 from agents.solver_agent import MathSolverAgent
 from agents.verification_agent import VerificationAgent
+from agents.math_planner_agent import MathPlannerAgent  # Added import
+from agents.plan_execution_agent import PlanExecutionAgent  # Added import
 from core.math_toolbox import MathToolbox
 from core.virtual_tool_manager import VirtualToolManager
 from workflows.math_workflow import math_workflow
@@ -76,6 +77,15 @@ def get_cas_agent():
     return CASAgent()
 
 
+# Added new helper functions for the required agents
+def get_math_planner_agent():
+    return MathPlannerAgent()
+
+
+def get_plan_execution_agent():
+    return PlanExecutionAgent(math_toolbox)
+
+
 # Silent callback handler that doesn't require Streamlit
 class SilentCallbackHandler:
     def __init__(self):
@@ -124,6 +134,9 @@ async def solve_with_tribunal(request: ProblemRequest):
         solver_agent = get_solver_agent()
         verification_agent = get_verification_agent()
         cas_agent = get_cas_agent()
+        # Added missing agents
+        math_planner_agent = get_math_planner_agent()
+        plan_execution_agent = get_plan_execution_agent()
         callback_handler = SilentCallbackHandler()
 
         result = math_workflow(
@@ -131,6 +144,8 @@ async def solve_with_tribunal(request: ProblemRequest):
             solver_agent=solver_agent,
             verification_agent=verification_agent,
             cas_agent=cas_agent,
+            math_planner_agent=math_planner_agent,  # Added required argument
+            plan_execution_agent=plan_execution_agent,  # Added required argument
             vtm=virtual_tool_manager,
             callback_handler=callback_handler
         )

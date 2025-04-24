@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Function Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .calculator {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .display {
+            margin-bottom: 10px;
+        }
+
+        #accumulator, #result {
+            width: 96%;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            min-height: 30px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .operation {
+            background-color: #f0f0f0;
+        }
+
+        .equals {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .error {
+            background-color: #ffebee;
+            color: #d32f2f;
+            border: 1px solid #ffcdd2;
+        }
+
+        .success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0,0,0,0.3);
+            border-radius: 50%;
+            border-top-color: #000;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Four Function Calculator</h1>
+
+    <div class="calculator">
+        <div class="display">
+            <div id="accumulator"></div>
+            <div id="result"></div>
+        </div>
+
+        <div class="buttons">
+            <button class="number" data-value="7">7</button>
+            <button class="number" data-value="8">8</button>
+            <button class="number" data-value="9">9</button>
+            <button class="operation" data-value="/">÷</button>
+
+            <button class="number" data-value="4">4</button>
+            <button class="number" data-value="5">5</button>
+            <button class="number" data-value="6">6</button>
+            <button class="operation" data-value="*">×</button>
+
+            <button class="number" data-value="1">1</button>
+            <button class="number" data-value="2">2</button>
+            <button class="number" data-value="3">3</button>
+            <button class="operation" data-value="-">−</button>
+
+            <button class="number" data-value="0">0</button>
+            <button class="number" data-value=".">.</button>
+            <button class="clear" id="clear">C</button>
+            <button class="operation" data-value="+">+</button>
+
+            <button class="equals" id="calculate" colspan="4">Calculate</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accumulator = document.getElementById('accumulator');
+            const result = document.getElementById('result');
+            const status = document.getElementById('status');
+            const clearBtn = document.getElementById('clear');
+            const calculateBtn = document.getElementById('calculate');
+            const numbers = document.querySelectorAll('.number');
+            const operations = document.querySelectorAll('.operation');
+
+            // API configuration
+            const API_BASE_URL = 'http://localhost:8000';
+
+            let expression = '';
+
+            // Add number to expression
+            numbers.forEach(button => {
+                button.addEventListener('click', function() {
+                    expression += button.dataset.value;
+                    updateDisplay();
+                });
+            });
+
+            // Add operation to expression
+            operations.forEach(button => {
+                button.addEventListener('click', function() {
+                    expression += ' ' + button.dataset.value + ' ';
+                    updateDisplay();
+                });
+            });
+
+            // Clear expression
+            clearBtn.addEventListener('click', function() {
+                expression = '';
+                result.textContent = '';
+                status.style.display = 'none';
+                updateDisplay();
+            });
+
+            // Send calculation to API
+            calculateBtn.addEventListener('click', function() {
+                if (expression.trim() === '') {
+                    showStatus('Please enter a calculation', 'error');
+                    return;
+                }
+
+                calculateExpression();
+            });
+
+            // Update display with current expression
+            function updateDisplay() {
+                accumulator.textContent = expression;
+            }
+
+            // Show status message
+            function showStatus(message, type) {
+                status.textContent = message;
+                status.className = 'status ' + type;
+                status.style.display = 'block';
+            }
+
+            // Send calculation to API
+            async function calculateExpression() {
+                try {
+                    // Show loading indicator
+                    status.innerHTML = '<span class="loading"></span> Calculating...';
+                    status.className = 'status';
+                    status.style.display = 'block';
+
+                    const response = await fetch(`${API_BASE_URL}/api/tribunal`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ problem: expression }),
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.detail || 'Failed to calculate');
+                    }
+
+                    const data = await response.json();
+                    result.textContent = data.solution;
+                    showStatus('Calculation successful', 'success');
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    showStatus(error.message || 'Error calculating expression', 'error');
+                    result.textContent = 'Error';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

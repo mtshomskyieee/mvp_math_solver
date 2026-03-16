@@ -109,5 +109,5 @@ To run unit tests, run the following:
 ![class_diagram.png](docs%2Fclass_diagram.png)
 
 # Slides
-[SpindleAI Application.pdf](docs%2FSpindleAI%20Application.pdf)
+[SpindleAI Application.pdf](docs%2FAgenticMath.pdf)
 
